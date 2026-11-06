@@ -1,38 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mocha & Miso — A Craft Café Experience</title>
-  <meta name="description" content="Mocha & Miso is a premium Japandi-inspired craft café in the heart of the city. Handcrafted coffee, seasonal menus, and a warm atmosphere designed for slow mornings." />
-  <meta name="keywords" content="premium café, craft coffee, Japandi café, specialty coffee, café restaurant, artisan café" />
-  <meta property="og:title" content="Mocha & Miso — A Craft Café Experience" />
-  <meta property="og:description" content="Step into warmth. Premium coffee, handcrafted food, and a space designed for slow moments." />
+  <title>Stefyy Store — Indumentaria &amp; Moda | Tienda Online Oficial</title>
+  <meta name="description" content="Descubrí la nueva colección de Stefyy Store. Blazers sastreros, jeans wide leg, vestidos de satén, tops y accesorios de tendencia. Envíos a todo el país y pedidos directos por WhatsApp." />
+  <meta name="keywords" content="Stefyy Store, indumentaria femenina, moda argentina, ropa de mujer, blazers, wide leg, vestidos, ropa de tendencia, tienda de ropa online" />
+  <meta property="og:title" content="Stefyy Store — Indumentaria &amp; Moda" />
+  <meta property="og:description" content="Viste tu esencia. Nueva colección de prendas de tendencia, calces impecables y textiles premium. Hacé tu pedido directo por WhatsApp." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="asstes/logo.jpg" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop" />
 
   <!-- Favicon / Website Link Logo -->
-  <link rel="icon" type="image/jpeg" href="asstes/logo_icon.jpg" />
-  <link rel="shortcut icon" href="asstes/logo_icon.jpg" type="image/jpeg" />
-  <link rel="apple-touch-icon" href="asstes/logo_icon.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="asstes/logo.jpg" />
-  <!-- DNS prefetch for all external CDN domains — resolves hostnames in the
-       background so CDN connections start faster, improving FCP and TTI. -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='serif'>S</text></svg>" />
+
+  <!-- DNS prefetch for external CDN domains -->
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <link rel="dns-prefetch" href="https://unpkg.com" />
-  <link rel="dns-prefetch" href="https://www.gstatic.com" />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
   <!-- Google Fonts: Cormorant Garamond (serif) + DM Sans (sans-serif) -->
-  <!-- display=swap prevents FOIT — text shows in fallback font immediately -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-
-  <!-- Firebase SDKs (Compat version for global firebase object) -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js" defer></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js" defer></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
 
   <!-- GSAP + ScrollTrigger + SplitType + Lenis CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -40,8 +30,8 @@
   <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js" defer></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
-  <!-- Preload hero image (LCP element) so it renders as fast as possible -->
-  <link rel="preload" as="image" href="asstes/8088465-garden-7111101.jpg" fetchpriority="high" />
+  <!-- Preload hero background image (LCP element) -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1920&auto=format&fit=crop" fetchpriority="high" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -58,14 +48,23 @@
   <!-- ============================================================ -->
   <!-- PAGE LOADER -->
   <!-- ============================================================ -->
-  <div class="loader" id="loader" role="status" aria-label="Loading">
+  <div class="loader" id="loader" role="status" aria-label="Cargando">
     <div class="loader-inner">
-      <svg class="loader-logo" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="40" cy="40" r="36" stroke="#5A3E36" stroke-width="1.5"/>
-        <path d="M24 44 Q40 28 56 44" stroke="#5A3E36" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      </svg>
+      <div class="loader-brand">
+        <span class="loader-brand-letter">S</span>
+        <span class="loader-brand-title">STEFYY STORE</span>
+      </div>
       <div class="loader-progress-bar"><span id="loader-fill"></span></div>
-      <p class="loader-text">Brewing something special…</p>
+      <p class="loader-text">Descubriendo nueva colección…</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <!-- ============================================================ -->
+  <div class="top-announcement" id="top-announcement">
+    <div class="container top-announcement-inner">
+      <span>✨ <strong>10% OFF</strong> abonando con Transferencia o Efectivo &nbsp;•&nbsp; 💳 <strong>3 Cuotas sin interés</strong> con Mercado Pago &nbsp;•&nbsp; 📦 Envíos a todo el país</span>
     </div>
   </div>
 
@@ -73,44 +72,58 @@
   <!-- NAVIGATION -->
   <!-- ============================================================ -->
   <header class="nav" id="navbar" role="banner">
-    <nav class="nav-inner container" aria-label="Main navigation">
-      <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="Mocha & Miso — Home">
-        <div class="nav-logo-img-wrap">
-          <img src="asstes/logo_icon.jpg" alt="Mocha and Miso café logo" class="nav-logo-img" />
-        </div>
+    <nav class="nav-inner container" aria-label="Navegación principal">
+      <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="Stefyy Store — Inicio">
+        <div class="nav-logo-mark">S</div>
         <div class="nav-logo-words">
-          <span class="nav-logo-name">Mocha &amp; Miso</span>
-          <span class="nav-logo-sub">Craft Café</span>
+          <span class="nav-logo-name">Stefyy Store</span>
+          <span class="nav-logo-sub">Indumentaria &amp; Moda</span>
         </div>
       </a>
 
       <ul class="nav-links" role="list">
-        <li><a href="#about" class="nav-link" data-section="about">Our Story</a></li>
-        <li><a href="#menu" class="nav-link" data-section="menu">Menu</a></li>
-        <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
-        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-        <li><a href="admin.html" target="_blank" class="nav-link" style="color: var(--coffee-light); font-weight: 500;">Admin</a></li>
+        <li><a href="#hero" class="nav-link" data-section="hero">Inicio</a></li>
+        <li><a href="#catalogo" class="nav-link" data-section="catalogo">Catálogo</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">Nuestra Esencia</a></li>
+        <li><a href="#destacados" class="nav-link" data-section="destacados">Destacados</a></li>
+        <li><a href="#galeria" class="nav-link" data-section="galeria">Lookbook</a></li>
+        <li><a href="#testimonios" class="nav-link" data-section="testimonios">Clientas</a></li>
+        <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
       </ul>
 
-      <a href="#reservation" class="btn btn-nav" id="nav-reservation-btn">Reserve a Table</a>
+      <div class="nav-actions">
+        <a href="#checkout" class="btn btn-nav" id="nav-reservation-btn">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>Pedir por WhatsApp</span>
+        </a>
 
-      <!-- Hamburger (mobile) -->
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
+        <!-- Hamburger (mobile) -->
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-      <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&times;</button>
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navegación móvil">
+      <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Cerrar menú">&times;</button>
+      <div class="mobile-menu-brand">
+        <span class="nav-logo-name">Stefyy Store</span>
+        <span class="nav-logo-sub">Indumentaria &amp; Moda</span>
+      </div>
       <ul class="mobile-links" role="list">
-        <li><a href="#about" class="mobile-link">Our Story</a></li>
-        <li><a href="#menu" class="mobile-link">Menu</a></li>
-        <li><a href="#signature" class="mobile-link">Signature</a></li>
-        <li><a href="#gallery" class="mobile-link">Gallery</a></li>
-        <li><a href="#reservation" class="mobile-link">Reserve</a></li>
-        <li><a href="#contact" class="mobile-link">Contact</a></li>
+        <li><a href="#hero" class="mobile-link">Inicio</a></li>
+        <li><a href="#catalogo" class="mobile-link">Catálogo de Prendas</a></li>
+        <li><a href="#about" class="mobile-link">Nuestra Esencia</a></li>
+        <li><a href="#destacados" class="mobile-link">Prendas Destacadas</a></li>
+        <li><a href="#galeria" class="mobile-link">Lookbook</a></li>
+        <li><a href="#testimonios" class="mobile-link">Opiniones de Clientas</a></li>
+        <li><a href="#checkout" class="mobile-link highlight-link">Hacer Pedido por WhatsApp</a></li>
+        <li><a href="#contacto" class="mobile-link">Contacto &amp; Envíos</a></li>
       </ul>
+      <div class="mobile-menu-footer">
+        <a href="https://www.instagram.com/stefyy_store/" target="_blank" rel="noopener noreferrer" class="mobile-social-link">Instagram: @stefyy_store</a>
+      </div>
     </div>
   </header>
 
@@ -119,13 +132,12 @@
     <!-- ============================================================ -->
     <!-- 1. HERO SECTION -->
     <!-- ============================================================ -->
-    <section class="hero" id="hero" aria-label="Hero">
+    <section class="hero" id="hero" aria-label="Colección de moda Stefyy Store">
       <!-- Parallax image container -->
       <div class="hero-image-wrap" id="hero-img-wrap">
-        <!-- IMAGE: Hero background — asstes/8088465-garden-7111101.jpg (warm garden café) -->
         <img
-          src="asstes/8088465-garden-7111101.jpg"
-          alt="Mocha & Miso café — sunlit garden seating with natural wood and lush greenery"
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1920&auto=format&fit=crop"
+          alt="Stefyy Store — Nueva Colección de Indumentaria Femenina y Tendencia"
           class="hero-image"
           id="hero-img"
           loading="eager"
@@ -134,87 +146,102 @@
         <div class="hero-overlay"></div>
       </div>
 
-      <!-- Subtle steam SVG animation -->
-      <div class="hero-steam" aria-hidden="true">
-        <svg class="steam-svg" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
-          <path class="steam-path s1" d="M100 380 Q80 320 100 260 Q120 200 100 140" stroke="rgba(248,245,242,0.18)" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path class="steam-path s2" d="M130 380 Q150 310 130 240 Q110 170 130 100" stroke="rgba(248,245,242,0.12)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <path class="steam-path s3" d="M70 380 Q50 300 70 220 Q90 140 70 60" stroke="rgba(248,245,242,0.10)" stroke-width="1" fill="none" stroke-linecap="round"/>
-        </svg>
-      </div>
-
       <!-- Hero content -->
       <div class="hero-content container">
-        <div class="hero-eyebrow reveal-text" data-split="chars">Est. 2019 · Craft Café</div>
+        <div class="hero-eyebrow reveal-text" data-split="chars">Nueva Colección 2026 · Tendencia &amp; Estilo</div>
         <h1 class="hero-title">
-          <span class="hero-title-line reveal-text" data-split="words">Where Every</span>
-          <span class="hero-title-line hero-title-italic reveal-text" data-split="words">Sip Tells</span>
-          <span class="hero-title-line reveal-text" data-split="words">a Story.</span>
+          <span class="hero-title-line reveal-text" data-split="words">Viste Tu Esencia,</span>
+          <span class="hero-title-line hero-title-italic reveal-text" data-split="words">Define Tu</span>
+          <span class="hero-title-line reveal-text" data-split="words">Propio Estilo.</span>
         </h1>
-        <p class="hero-tagline reveal-fade">Handcrafted coffee. Seasonal kitchen. A space made for slow mornings and good conversation.</p>
+        <p class="hero-tagline reveal-fade">Prendas contemporáneas, siluetas sofisticadas y textiles de máxima calidad. Diseños pensados para acompañarte en cada momento con frescura, confort y elegancia sin esfuerzo.</p>
         <div class="hero-cta reveal-fade">
-          <a href="#menu" class="btn btn-primary magnetic" id="hero-cta-primary">Explore Our Menu</a>
-          <a href="#about" class="btn btn-ghost magnetic" id="hero-cta-ghost">Our Story</a>
+          <a href="#catalogo" class="btn btn-primary magnetic" id="hero-cta-primary">
+            <span>Explorar Colección</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#checkout" class="btn btn-ghost magnetic" id="hero-cta-ghost">
+            <span>Pedir por WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges Bar -->
+        <div class="hero-badges reveal-fade">
+          <div class="hero-badge-item">
+            <span class="hero-badge-icon">🚚</span>
+            <span class="hero-badge-text">Envíos a todo el país</span>
+          </div>
+          <div class="hero-badge-item">
+            <span class="hero-badge-icon">🏷️</span>
+            <span class="hero-badge-text">10% OFF Transferencia</span>
+          </div>
+          <div class="hero-badge-item">
+            <span class="hero-badge-icon">💳</span>
+            <span class="hero-badge-text">3 Cuotas sin interés</span>
+          </div>
+          <div class="hero-badge-item">
+            <span class="hero-badge-icon">💖</span>
+            <span class="hero-badge-text">+10.000 clientas felices</span>
+          </div>
         </div>
       </div>
 
       <!-- Scroll indicator -->
-      <div class="scroll-indicator" id="scroll-indicator" aria-label="Scroll down">
+      <div class="scroll-indicator" id="scroll-indicator" aria-label="Desplazarse hacia abajo">
         <div class="scroll-line"><span class="scroll-line-inner"></span></div>
-        <span class="scroll-label">Scroll</span>
+        <span class="scroll-label">Descubrí Más</span>
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- 2. ABOUT SECTION -->
+    <!-- 2. ABOUT SECTION — NUESTRA ESENCIA -->
     <!-- ============================================================ -->
     <section class="about" id="about" aria-labelledby="about-heading">
       <div class="container">
 
         <!-- Eyebrow label -->
-        <div class="section-label reveal-text" data-split="chars">— Our Story</div>
+        <div class="section-label reveal-text" data-split="chars">— Nuestra Esencia</div>
 
         <div class="about-grid">
           <!-- Image side -->
           <div class="about-image-col">
             <div class="about-image-wrap clip-reveal">
-              <!-- IMAGE: About section — asstes/hoahoa111-cafe-5972490.jpg (person reading in café) -->
               <img
-                src="asstes/hoahoa111-cafe-5972490.jpg"
-                alt="A guest reading at Mocha & Miso — warm wooden table, natural afternoon light"
+                src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1200&auto=format&fit=crop"
+                alt="Diseño y confección en Stefyy Store — Indumentaria de tendencia"
                 class="about-img"
-                loading="lazy" decoding="async"
+                loading="lazy"
                 decoding="async"
               />
             </div>
             <div class="about-accent-card reveal-up">
-              <span class="accent-number">7+</span>
-              <span class="accent-label">Years of craft brewing</span>
+              <span class="accent-number">+5</span>
+              <span class="accent-label">Años vistiendo a mujeres reales con estilo</span>
             </div>
           </div>
 
           <!-- Text side -->
           <div class="about-text-col">
             <h2 class="section-heading reveal-text" id="about-heading" data-split="lines">
-              A café born from<br/><em>love and intention.</em>
+              Moda con actitud para<br/><em>mujeres reales y auténticas.</em>
             </h2>
             <div class="about-body">
               <p class="about-para reveal-up">
-                Mocha &amp; Miso began in 2019 with a simple belief: that a café should feel like a second home. We wanted warm light, honest food, and coffee that you actually remember.
+                <strong>Stefyy Store</strong> nació con una premisa clara: la moda no debería ser complicada ni inaccesible. Creemos en prendas versátiles que eleven tu confianza todos los días, tanto para un día de oficina como para una cena especial o un fin de semana descontracturado.
               </p>
               <p class="about-para reveal-up">
-                Inspired by the quiet craftsmanship of Japanese coffee culture and the cosy sensibility of Scandinavian design, every corner of our space has been thought through — from the clay cups to the handwritten seasonal menu on the chalk board.
+                Inspiradas en las tendencias urbanas globales y la sofisticación atemporal, curamos semanalmente prendas exclusivas: blazers sastreros de caída impecable, denim de tiro perfecto, lino fresco y tejidos suaves que abrazan tu cuerpo con comodidad.
               </p>
               <p class="about-para reveal-up">
-                We source our beans from small-batch farmers in Coorg and Vietnam, our produce from local organic growers, and our baked goods from our in-house kitchen that starts at 5am every morning.
+                Atendemos personalmente a cada clienta por WhatsApp, asesorándote sobre medidas, combinaciones y envíos rápidos a cualquier punto de la Argentina.
               </p>
             </div>
             <div class="about-values reveal-up">
-              <div class="value-item"><span class="value-icon" aria-hidden="true">◦</span> Single-Origin Beans</div>
-              <div class="value-item"><span class="value-icon" aria-hidden="true">◦</span> Seasonal Kitchen</div>
-              <div class="value-item"><span class="value-icon" aria-hidden="true">◦</span> Slow Mornings</div>
+              <div class="value-item"><span class="value-icon" aria-hidden="true">✦</span> Textiles Seleccionados</div>
+              <div class="value-item"><span class="value-icon" aria-hidden="true">✦</span> Talles Reales &amp; Confort</div>
+              <div class="value-item"><span class="value-icon" aria-hidden="true">✦</span> Asesoramiento 1 a 1</div>
             </div>
-            <a href="#reservation" class="btn btn-primary magnetic reveal-up" id="about-cta">Book a Table</a>
+            <a href="#catalogo" class="btn btn-primary magnetic reveal-up" id="about-cta">Ver Catálogo Completo</a>
           </div>
         </div>
 
@@ -222,12 +249,12 @@
         <div class="about-quote reveal-fade">
           <blockquote class="marquee-quote">
             <span class="marquee-inner">
-              <em>"The ritual of a morning coffee is sacred. We build our café around yours."</em>
-              &nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;&nbsp;
-              <em>"The ritual of a morning coffee is sacred. We build our café around yours."</em>
-              &nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;&nbsp;
-              <em>"The ritual of a morning coffee is sacred. We build our café around yours."</em>
-              &nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;&nbsp;
+              <em>"La ropa no solo se viste, se siente. Sentite segura, cómoda y auténtica con Stefyy Store."</em>
+              &nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;
+              <em>"Piezas atemporales pensadas para perdurar en tu guardarropa."</em>
+              &nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;
+              <em>"Envíos a todo el país y atención personalizada vía WhatsApp."</em>
+              &nbsp;&nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
           </blockquote>
         </div>
@@ -236,364 +263,728 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- 3. FEATURED MENU SECTION -->
+    <!-- 3. FEATURED CATALOG SECTION (#menu -> #catalogo) -->
     <!-- ============================================================ -->
-    <section class="menu" id="menu" aria-labelledby="menu-heading">
+    <section class="menu" id="catalogo" aria-labelledby="catalogo-heading">
       <div class="container">
 
         <div class="section-header">
-          <div class="section-label reveal-text" data-split="chars">— Our Menu</div>
-          <h2 class="section-heading reveal-text" id="menu-heading" data-split="lines">
-            Crafted with<br/><em>intention & care.</em>
+          <div class="section-label reveal-text" data-split="chars">— Nuestro Catálogo</div>
+          <h2 class="section-heading reveal-text" id="catalogo-heading" data-split="lines">
+            Prendas de temporada,<br/><em>estilo sin esfuerzo.</em>
           </h2>
-          <p class="section-subtext reveal-up">Every item on our menu is seasonal, sourced locally, and prepared fresh each morning.</p>
+          <p class="section-subtext reveal-up">Elegí tu talle y color preferido en cada prenda. Hacé click en <strong>Pedir por WhatsApp</strong> para iniciar tu pedido directo.</p>
         </div>
 
-        <!-- Menu Category Tabs -->
-        <div class="menu-tabs reveal-up" role="tablist" aria-label="Menu categories">
-          <button class="menu-tab active" data-filter="all" role="tab" aria-selected="true" id="tab-all">All</button>
-          <button class="menu-tab" data-filter="drinks" role="tab" aria-selected="false" id="tab-drinks">Drinks</button>
-          <button class="menu-tab" data-filter="food" role="tab" aria-selected="false" id="tab-food">Food</button>
-          <button class="menu-tab" data-filter="desserts" role="tab" aria-selected="false" id="tab-desserts">Desserts</button>
+        <!-- Catalog Category Filter Tabs -->
+        <div class="menu-tabs reveal-up" role="tablist" aria-label="Categorías de indumentaria">
+          <button class="menu-tab active" data-filter="all" role="tab" aria-selected="true" id="tab-all">Todos</button>
+          <button class="menu-tab" data-filter="tops" role="tab" aria-selected="false" id="tab-tops">Tops &amp; Remeras</button>
+          <button class="menu-tab" data-filter="pantalones" role="tab" aria-selected="false" id="tab-pantalones">Pantalones &amp; Jeans</button>
+          <button class="menu-tab" data-filter="vestidos" role="tab" aria-selected="false" id="tab-vestidos">Vestidos &amp; Polleras</button>
+          <button class="menu-tab" data-filter="abrigos" role="tab" aria-selected="false" id="tab-abrigos">Abrigos &amp; Jackets</button>
+          <button class="menu-tab" data-filter="accesorios" role="tab" aria-selected="false" id="tab-accesorios">Accesorios</button>
         </div>
 
-        <!-- Menu Grid -->
+        <!-- Catalog Grid -->
         <div class="menu-grid" id="menu-grid" role="tabpanel" aria-labelledby="tab-all">
 
-          <!-- Card 1: Espresso -->
-          <article class="menu-card magnetic-card" data-category="drinks" data-index="0">
+          <!-- Card 1: Blazer Sastrero Milano -->
+          <article class="menu-card magnetic-card" data-category="abrigos" data-id="prod-1" data-title="Blazer Sastrero Milano Oversize" data-price="48900" data-index="0">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_espresso.jpg -->
-              <img src="asstes/menu_espresso.jpg" alt="Rich single-origin espresso shot" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <span class="product-badge badge-hot">Tendencia</span>
+              <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=800&auto=format&fit=crop" alt="Blazer Sastrero Milano Oversize — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Espresso</span>
-                <span class="menu-card-price">₹180</span>
+                <span class="menu-card-category">Abrigos &amp; Sastrería</span>
+                <span class="menu-card-price">$48.900</span>
               </div>
-              <h3 class="menu-card-title">Single Origin Espresso</h3>
-              <p class="menu-card-desc">Dark cherry, raw cacao & a finish of caramel. Our house espresso from Coorg highlands.</p>
+              <h3 class="menu-card-title">Blazer Sastrero Milano Oversize</h3>
+              <p class="menu-card-desc">Corte estructurado con hombreras sutiles, forrería en satén y botones a tono. El ícono indiscutido de elegancia.</p>
+              
+              <!-- Variant Selectors: Talles y Colores -->
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="S">S</button>
+                    <button type="button" class="size-pill active" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                    <button type="button" class="size-pill" data-size="XL">XL</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Negro Azabache" style="background-color: #111111;" title="Negro Azabache"></button>
+                    <button type="button" class="color-dot" data-color="Beige Crema" style="background-color: #D8C3A5;" title="Beige Crema"></button>
+                    <button type="button" class="color-dot" data-color="Moka Chocolate" style="background-color: #5C4033;" title="Moka Chocolate"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$44.010</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 2: Cappuccino -->
-          <article class="menu-card magnetic-card" data-category="drinks" data-index="1">
+          <!-- Card 2: Jean Wide Leg Vintage Blue -->
+          <article class="menu-card magnetic-card" data-category="pantalones" data-id="prod-2" data-title="Jean Wide Leg Vintage Blue" data-price="38000" data-index="1">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_cappuccino.jpg -->
-              <img src="asstes/menu_cappuccino.jpg" alt="Hand-poured cappuccino with rosetta latte art" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <span class="product-badge badge-new">Best Seller</span>
+              <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop" alt="Jean Wide Leg Vintage Blue — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Espresso</span>
-                <span class="menu-card-price">₹240</span>
+                <span class="menu-card-category">Pantalones &amp; Jeans</span>
+                <span class="menu-card-price">$38.000</span>
               </div>
-              <h3 class="menu-card-title">Velvet Cappuccino</h3>
-              <p class="menu-card-desc">Double shot, steamed Nilgiri milk, hand-poured rosetta art. The benchmark of craft coffee.</p>
+              <h3 class="menu-card-title">Jean Wide Leg Vintage Blue</h3>
+              <p class="menu-card-desc">Denim rígido 100% algodón, tiro alto y bota ancha relajada. Calce favorecedor que estiliza cada silueta.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="36">36</button>
+                    <button type="button" class="size-pill active" data-size="38">38</button>
+                    <button type="button" class="size-pill" data-size="40">40</button>
+                    <button type="button" class="size-pill" data-size="42">42</button>
+                    <button type="button" class="size-pill" data-size="44">44</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Azul Clásico" style="background-color: #3b5998;" title="Azul Clásico"></button>
+                    <button type="button" class="color-dot" data-color="Celeste Vintage" style="background-color: #89CFF0;" title="Celeste Vintage"></button>
+                    <button type="button" class="color-dot" data-color="Off White" style="background-color: #F8F6F0;" title="Off White"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$34.200</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 3: Cold Brew -->
-          <article class="menu-card magnetic-card" data-category="drinks" data-index="2">
+          <!-- Card 3: Top Corset Lino Creta -->
+          <article class="menu-card magnetic-card" data-category="tops" data-id="prod-3" data-title="Top Corset Lino Creta" data-price="22500" data-index="2">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_coldbrew.jpg -->
-              <img src="asstes/menu_coldbrew.jpg" alt="Slow-drip cold brew over ice" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <span class="product-badge badge-sale">Nuevo</span>
+              <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=800&auto=format&fit=crop" alt="Top Corset Lino Creta — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Cold Coffee</span>
-                <span class="menu-card-price">₹280</span>
+                <span class="menu-card-category">Tops &amp; Remeras</span>
+                <span class="menu-card-price">$22.500</span>
               </div>
-              <h3 class="menu-card-title">18-Hour Cold Brew</h3>
-              <p class="menu-card-desc">Slow-steeped for 18 hours. Velvety smooth, naturally sweet, with hints of dark chocolate.</p>
+              <h3 class="menu-card-title">Top Corset Lino Creta</h3>
+              <p class="menu-card-desc">Confeccionado en puro lino mezcla con ballenas sutiles que marcan la figura y espalda con lazo ajustable.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="XS">XS</button>
+                    <button type="button" class="size-pill active" data-size="S">S</button>
+                    <button type="button" class="size-pill" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Nude Arena" style="background-color: #E2CEBE;" title="Nude Arena"></button>
+                    <button type="button" class="color-dot" data-color="Blanco Puro" style="background-color: #FFFFFF;" title="Blanco Puro"></button>
+                    <button type="button" class="color-dot" data-color="Negro" style="background-color: #111111;" title="Negro"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$20.250</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 4: Matcha Latte -->
-          <article class="menu-card magnetic-card" data-category="drinks" data-index="3">
+          <!-- Card 4: Vestido Midi Satén Roma -->
+          <article class="menu-card magnetic-card" data-category="vestidos" data-id="prod-4" data-title="Vestido Midi Satén Roma" data-price="42000" data-index="3">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_matcha.jpg -->
-              <img src="asstes/menu_matcha.jpg" alt="Ceremonial grade matcha latte" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <span class="product-badge badge-hot">Exclusivo</span>
+              <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop" alt="Vestido Midi Satén Roma — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Specialty</span>
-                <span class="menu-card-price">₹300</span>
+                <span class="menu-card-category">Vestidos &amp; Polleras</span>
+                <span class="menu-card-price">$42.000</span>
               </div>
-              <h3 class="menu-card-title">Ceremonial Matcha Latte</h3>
-              <p class="menu-card-desc">Uji ceremonial grade matcha whisked with oat milk. Earthy, grassy, and beautifully balanced.</p>
+              <h3 class="menu-card-title">Vestido Midi Satén Roma</h3>
+              <p class="menu-card-desc">Corte al bies con breteles finos regulables y escote drapeado fluido. Caída líquida que deslumbra de noche.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="S">S</button>
+                    <button type="button" class="size-pill active" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Champagne Gold" style="background-color: #E8D5B5;" title="Champagne Gold"></button>
+                    <button type="button" class="color-dot" data-color="Negro Noche" style="background-color: #111111;" title="Negro Noche"></button>
+                    <button type="button" class="color-dot" data-color="Verde Esmeralda" style="background-color: #1B4D3E;" title="Verde Esmeralda"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$37.800</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 5: Iced Mocha -->
-          <article class="menu-card magnetic-card" data-category="drinks" data-index="4">
+          <!-- Card 5: Trench Coat Impermeable Camel -->
+          <article class="menu-card magnetic-card" data-category="abrigos" data-id="prod-5" data-title="Trench Coat London Camel" data-price="58000" data-index="4">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_icedmocha.jpg -->
-              <img src="asstes/menu_icedmocha.jpg" alt="Iced mocha with whipped cream" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <span class="product-badge badge-hot">Clásico</span>
+              <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop" alt="Trench Coat London Camel — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Cold Coffee</span>
-                <span class="menu-card-price">₹320</span>
+                <span class="menu-card-category">Abrigos &amp; Jackets</span>
+                <span class="menu-card-price">$58.000</span>
               </div>
-              <h3 class="menu-card-title">Dark Iced Mocha</h3>
-              <p class="menu-card-desc">House espresso, dark cocoa syrup, cold milk, and a cloud of lightly sweetened cream.</p>
+              <h3 class="menu-card-title">Trench Coat London Camel</h3>
+              <p class="menu-card-desc">Gabardina impermeable con cinto hebilla forrada y doble abotonadura. Protección y sofisticación atemporal.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="S">S</button>
+                    <button type="button" class="size-pill active" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Camel Clásico" style="background-color: #C19A6B;" title="Camel Clásico"></button>
+                    <button type="button" class="color-dot" data-color="Negro Profundo" style="background-color: #111111;" title="Negro Profundo"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$52.200</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 6: Croissant -->
-          <article class="menu-card magnetic-card" data-category="food" data-index="5">
+          <!-- Card 6: Pantalón Sastrero París -->
+          <article class="menu-card magnetic-card" data-category="pantalones" data-id="prod-6" data-title="Pantalón Sastrero París Pinzado" data-price="36500" data-index="5">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_croissant.jpg -->
-              <img src="asstes/menu_croissant.jpg" alt="Freshly baked butter croissant" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <span class="product-badge badge-sale">Favorito</span>
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop" alt="Pantalón Sastrero París Pinzado — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Bakery</span>
-                <span class="menu-card-price">₹220</span>
+                <span class="menu-card-category">Pantalones &amp; Jeans</span>
+                <span class="menu-card-price">$36.500</span>
               </div>
-              <h3 class="menu-card-title">Laminated Butter Croissant</h3>
-              <p class="menu-card-desc">72-layer French butter croissant baked in-house at 5am. Served warm with house jam.</p>
+              <h3 class="menu-card-title">Pantalón Sastrero París Pinzado</h3>
+              <p class="menu-card-desc">Pinzas delanteras marcadas, elástico en pretina trasera para confort absoluto y bolsillos laterales.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="S">S</button>
+                    <button type="button" class="size-pill active" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                    <button type="button" class="size-pill" data-size="XL">XL</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Gris Melange" style="background-color: #8C8C8C;" title="Gris Melange"></button>
+                    <button type="button" class="color-dot" data-color="Negro Clásico" style="background-color: #111111;" title="Negro Clásico"></button>
+                    <button type="button" class="color-dot" data-color="Verde Oliva" style="background-color: #556B2F;" title="Verde Oliva"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$32.850</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 7: Pancakes -->
-          <article class="menu-card magnetic-card" data-category="food" data-index="6">
+          <!-- Card 7: Remera Algodón Pima Essential -->
+          <article class="menu-card magnetic-card" data-category="tops" data-id="prod-7" data-title="Remera Algodón Pima Essential" data-price="18900" data-index="6">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_pancakes.jpg -->
-              <img src="asstes/menu_pancakes.jpg" alt="Fluffy Japanese soufflé pancakes" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=800&auto=format&fit=crop" alt="Remera Algodón Pima Essential — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Breakfast</span>
-                <span class="menu-card-price">₹380</span>
+                <span class="menu-card-category">Tops &amp; Remeras</span>
+                <span class="menu-card-price">$18.900</span>
               </div>
-              <h3 class="menu-card-title">Soufflé Pancake Stack</h3>
-              <p class="menu-card-desc">Japanese-style cloud pancakes with seasonal berries, whipped mascarpone, and maple syrup.</p>
+              <h3 class="menu-card-title">Remera Algodón Pima Essential</h3>
+              <p class="menu-card-desc">Básico de lujo confeccionado en 100% algodón pima peinado. Tacto ultra suave, cuello redondo y calce relajado.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="S">S</button>
+                    <button type="button" class="size-pill active" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Blanco Nieve" style="background-color: #FFFFFF;" title="Blanco Nieve"></button>
+                    <button type="button" class="color-dot" data-color="Negro Puro" style="background-color: #111111;" title="Negro Puro"></button>
+                    <button type="button" class="color-dot" data-color="Gris Jaspe" style="background-color: #CCCCCC;" title="Gris Jaspe"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$17.010</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 8: Chicken Sandwich -->
-          <article class="menu-card magnetic-card" data-category="food" data-index="7">
+          <!-- Card 8: Chaleco Sastrero Soho -->
+          <article class="menu-card magnetic-card" data-category="tops" data-id="prod-8" data-title="Chaleco Sastrero Soho" data-price="28000" data-index="7">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_sandwich.jpg -->
-              <img src="asstes/menu_sandwich.jpg" alt="Gourmet chicken club sandwich" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <span class="product-badge badge-hot">Tendencia</span>
+              <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=800&auto=format&fit=crop" alt="Chaleco Sastrero Soho — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Mains</span>
-                <span class="menu-card-price">₹450</span>
+                <span class="menu-card-category">Tops &amp; Sastrería</span>
+                <span class="menu-card-price">$28.000</span>
               </div>
-              <h3 class="menu-card-title">Smoked Chicken Brioche</h3>
-              <p class="menu-card-desc">Slow-smoked chicken thigh, avocado, heirloom tomato, and truffle aioli on a house brioche.</p>
+              <h3 class="menu-card-title">Chaleco Sastrero Soho</h3>
+              <p class="menu-card-desc">Botonadura frontal en carey, escote en V pronunciado y espalda con hebilla regulable. Ideal para usar solo o sobre remeras.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="S">S</button>
+                    <button type="button" class="size-pill active" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Beige Lino" style="background-color: #D2B48C;" title="Beige Lino"></button>
+                    <button type="button" class="color-dot" data-color="Negro" style="background-color: #111111;" title="Negro"></button>
+                    <button type="button" class="color-dot" data-color="Terracota" style="background-color: #E2725B;" title="Terracota"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$25.200</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 9: Cheesecake -->
-          <article class="menu-card magnetic-card" data-category="desserts" data-index="8">
+          <!-- Card 9: Vestido Lino Santorini -->
+          <article class="menu-card magnetic-card" data-category="vestidos" data-id="prod-9" data-title="Vestido Santorini Lino Puro" data-price="34000" data-index="8">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_cheesecake.jpg -->
-              <img src="asstes/menu_cheesecake.jpg" alt="Basque burnt cheesecake slice" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=800&auto=format&fit=crop" alt="Vestido Santorini Lino Puro — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Desserts</span>
-                <span class="menu-card-price">₹340</span>
+                <span class="menu-card-category">Vestidos &amp; Polleras</span>
+                <span class="menu-card-price">$34.000</span>
               </div>
-              <h3 class="menu-card-title">Basque Burnt Cheesecake</h3>
-              <p class="menu-card-desc">Classic San Sebastián-style cheesecake — caramelised top, silky centre, berry coulis.</p>
+              <h3 class="menu-card-title">Vestido Santorini Lino Puro</h3>
+              <p class="menu-card-desc">Corte evasé fresco, bolsillos funcionales y escote en espalda. El aliado imprescindible para días cálidos.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="S">S</button>
+                    <button type="button" class="size-pill active" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Blanco Rústico" style="background-color: #F8F8FF;" title="Blanco Rústico"></button>
+                    <button type="button" class="color-dot" data-color="Menta Pastel" style="background-color: #98FF98;" title="Menta Pastel"></button>
+                    <button type="button" class="color-dot" data-color="Negro" style="background-color: #111111;" title="Negro"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$30.600</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 10: Truffle Pasta -->
-          <article class="menu-card magnetic-card" data-category="food" data-index="9">
+          <!-- Card 10: Campera Biker Ecocuero Noir -->
+          <article class="menu-card magnetic-card" data-category="abrigos" data-id="prod-10" data-title="Campera Biker Ecocuero Noir" data-price="52000" data-index="9">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/matteophotopro2020-mussels-5342679_1920.jpg (seafood pasta) -->
-              <img src="asstes/matteophotopro2020-mussels-5342679_1920.jpg" alt="Seafood linguine with mussels and prawns" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <span class="product-badge badge-hot">Must Have</span>
+              <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=800&auto=format&fit=crop" alt="Campera Biker Ecocuero Noir — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Mains</span>
-                <span class="menu-card-price">₹620</span>
+                <span class="menu-card-category">Abrigos &amp; Jackets</span>
+                <span class="menu-card-price">$52.000</span>
               </div>
-              <h3 class="menu-card-title">Coastal Seafood Linguine</h3>
-              <p class="menu-card-desc">Fresh mussels, tiger prawns, clams, and scallops in a saffron-white wine bisque with house pasta.</p>
+              <h3 class="menu-card-title">Campera Biker Ecocuero Noir</h3>
+              <p class="menu-card-desc">Cierres metálicos niquelados en plata vieja, corte entallado y solapas con broches a presión. Actitud pura.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="S">S</button>
+                    <button type="button" class="size-pill active" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Negro Mate" style="background-color: #1A1A1A;" title="Negro Mate"></button>
+                    <button type="button" class="color-dot" data-color="Suela Vintage" style="background-color: #8B4513;" title="Suela Vintage"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$46.800</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 11: Rose Cardamom Cold Brew -->
-          <article class="menu-card magnetic-card" data-category="drinks" data-index="10">
+          <!-- Card 11: Pollera Mini Tablas Denim -->
+          <article class="menu-card magnetic-card" data-category="vestidos" data-id="prod-11" data-title="Pollera Mini Tablas Denim" data-price="26500" data-index="10">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_rosecoldbrew.png -->
-              <img src="asstes/menu_rosecoldbrew.png" alt="Rose Cardamom Cold Brew with orange twist" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?q=80&w=800&auto=format&fit=crop" alt="Pollera Mini Tablas Denim — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Cold Coffee</span>
-                <span class="menu-card-price">₹310</span>
+                <span class="menu-card-category">Vestidos &amp; Polleras</span>
+                <span class="menu-card-price">$26.500</span>
               </div>
-              <h3 class="menu-card-title">Rose Cardamom Cold Brew</h3>
-              <p class="menu-card-desc">Single-origin Ethiopian Yirgacheffe slow-dripped with rose water, cardamom &amp; fresh orange twist.</p>
+              <h3 class="menu-card-title">Pollera Mini Tablas Denim</h3>
+              <p class="menu-card-desc">Plisado sutil en tablas anchas, tiro medio/alto y cierre invisible. El toque colegial chic de la temporada.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill" data-size="S">S</button>
+                    <button type="button" class="size-pill active" data-size="M">M</button>
+                    <button type="button" class="size-pill" data-size="L">L</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Azul Denim" style="background-color: #2F4F4F;" title="Azul Denim"></button>
+                    <button type="button" class="color-dot" data-color="Gris Lavado" style="background-color: #708090;" title="Gris Lavado"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$23.850</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 12: Truffle Avocado Toast -->
-          <article class="menu-card magnetic-card" data-category="food" data-index="11">
+          <!-- Card 12: Hoodie Oversize Plush Velvet -->
+          <article class="menu-card magnetic-card" data-category="abrigos" data-id="prod-12" data-title="Hoodie Oversize Plush Velvet" data-price="35000" data-index="11">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_avocadotoast.png -->
-              <img src="asstes/menu_avocadotoast.png" alt="Truffle avocado sourdough toast with poached egg" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=800&auto=format&fit=crop" alt="Hoodie Oversize Plush Velvet — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Breakfast</span>
-                <span class="menu-card-price">₹390</span>
+                <span class="menu-card-category">Abrigos &amp; Hoodies</span>
+                <span class="menu-card-price">$35.000</span>
               </div>
-              <h3 class="menu-card-title">Truffle Avocado Sourdough</h3>
-              <p class="menu-card-desc">Sliced Hass avocado, poached organic eggs, microgreens, and black truffle drizzle on toasted sourdough.</p>
+              <h3 class="menu-card-title">Hoodie Oversize Plush Velvet</h3>
+              <p class="menu-card-desc">Frisa invisible pesada premium, capucha doble reforzada y bolsillo canguro. El abrigo comfy por excelencia.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill active" data-size="Único">Único</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Crudo Sand" style="background-color: #E6DDD2;" title="Crudo Sand"></button>
+                    <button type="button" class="color-dot" data-color="Gris Plomo" style="background-color: #4A4A4A;" title="Gris Plomo"></button>
+                    <button type="button" class="color-dot" data-color="Verde Matcha" style="background-color: #788768;" title="Verde Matcha"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$31.500</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 13: Chicken Katsu Sando -->
-          <article class="menu-card magnetic-card" data-category="food" data-index="12">
+          <!-- Card 13: Tote Bag Cuero Vegano Siena -->
+          <article class="menu-card magnetic-card" data-category="accesorios" data-id="prod-13" data-title="Bolso Tote Bag Cuero Vegano Siena" data-price="29900" data-index="12">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_katsusando.png -->
-              <img src="asstes/menu_katsusando.png" alt="Crispy chicken katsu sandwich on Japanese milk bread" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop" alt="Bolso Tote Bag Cuero Vegano Siena — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Mains</span>
-                <span class="menu-card-price">₹480</span>
+                <span class="menu-card-category">Accesorios</span>
+                <span class="menu-card-price">$29.900</span>
               </div>
-              <h3 class="menu-card-title">Crispy Chicken Katsu Sando</h3>
-              <p class="menu-card-desc">Panko-crusted chicken thigh, shredded cabbage, tonkatsu sauce &amp; Japanese mayo on soft milk bread.</p>
+              <h3 class="menu-card-title">Bolso Tote Bag Cuero Vegano</h3>
+              <p class="menu-card-desc">Capacidad amplia para notebook y agenda, cierre reforzado y necessaire interno a juego. Estilo diario sin esfuerzo.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill active" data-size="Único">Único</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Suela Caramelo" style="background-color: #B87333;" title="Suela Caramelo"></button>
+                    <button type="button" class="color-dot" data-color="Negro Clásico" style="background-color: #111111;" title="Negro Clásico"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$26.910</strong> (10% OFF)</span>
+              </div>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
-          <!-- Card 14: Matcha Opera Cake -->
-          <article class="menu-card magnetic-card" data-category="desserts" data-index="13">
+          <!-- Card 14: Cinturón Cuero Hebilla Dorada Luxury -->
+          <article class="menu-card magnetic-card" data-category="accesorios" data-id="prod-14" data-title="Cinturón Cuero Hebilla Luxury Gold" data-price="14500" data-index="13">
             <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_matchaopera.png -->
-              <img src="asstes/menu_matchaopera.png" alt="Layered matcha opera cake with gold leaf" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
+              <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=800&auto=format&fit=crop" alt="Cinturón Cuero Hebilla Luxury Gold — Stefyy Store" class="menu-card-img" loading="lazy" decoding="async" />
+              <div class="menu-card-overlay"><span class="menu-card-view">Elegir Variante</span></div>
             </div>
             <div class="menu-card-body">
               <div class="menu-card-top">
-                <span class="menu-card-category">Patisserie</span>
-                <span class="menu-card-price">₹360</span>
+                <span class="menu-card-category">Accesorios</span>
+                <span class="menu-card-price">$14.500</span>
               </div>
-              <h3 class="menu-card-title">Matcha Gold Opera Cake</h3>
-              <p class="menu-card-desc">Decadent almond sponge, Uji matcha buttercream, and dark chocolate ganache topped with gold leaf.</p>
-            </div>
-          </article>
+              <h3 class="menu-card-title">Cinturón Cuero Hebilla Luxury</h3>
+              <p class="menu-card-desc">100% cuero legítimo con hebilla geométrica bañada en dorado brillante. El detalle que transforma un look.</p>
+              
+              <div class="product-variants">
+                <div class="variant-group">
+                  <span class="variant-label">Talle:</span>
+                  <div class="size-selector" data-variant-type="size">
+                    <button type="button" class="size-pill active" data-size="85">85</button>
+                    <button type="button" class="size-pill" data-size="95">95</button>
+                  </div>
+                </div>
+                <div class="variant-group">
+                  <span class="variant-label">Color:</span>
+                  <div class="color-selector" data-variant-type="color">
+                    <button type="button" class="color-dot active" data-color="Negro Oro" style="background-color: #111111;" title="Negro Oro"></button>
+                    <button type="button" class="color-dot" data-color="Marrón Tabaco" style="background-color: #5C4033;" title="Marrón Tabaco"></button>
+                  </div>
+                </div>
+              </div>
 
-          <!-- Card 15: Pistachio Raspberry Tart -->
-          <article class="menu-card magnetic-card" data-category="desserts" data-index="14">
-            <div class="menu-card-image-wrap">
-              <!-- IMAGE: asstes/menu_raspberrytart.png -->
-              <img src="asstes/menu_raspberrytart.png" alt="Pistachio and fresh raspberry tart" class="menu-card-img" loading="lazy" decoding="async" />
-              <div class="menu-card-overlay"><span class="menu-card-view">View</span></div>
-            </div>
-            <div class="menu-card-body">
-              <div class="menu-card-top">
-                <span class="menu-card-category">Pastry</span>
-                <span class="menu-card-price">₹370</span>
+              <div class="product-price-row">
+                <span class="transfer-price">Con transf: <strong>$13.050</strong> (10% OFF)</span>
               </div>
-              <h3 class="menu-card-title">Pistachio Raspberry Tart</h3>
-              <p class="menu-card-desc">Crisp pastry crust filled with rich pistachio frangipane, fresh raspberries &amp; vanilla bean cream.</p>
+
+              <button type="button" class="btn btn-card-buy btn-order-trigger">
+                <span>Comprar por WhatsApp</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              </button>
             </div>
           </article>
 
         </div>
 
         <div class="menu-footer reveal-up">
-          <a href="#reservation" class="btn btn-primary magnetic" id="menu-cta">Book for Dine-In</a>
+          <a href="#checkout" class="btn btn-primary magnetic" id="menu-cta">Iniciar Pedido Directo</a>
         </div>
 
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- 4. SIGNATURE DISHES — Alternating editorial layout -->
+    <!-- 4. SIGNATURE / EDITORIAL SECTION (#signature -> #destacados) -->
     <!-- ============================================================ -->
-    <section class="signature" id="signature" aria-labelledby="signature-heading">
+    <section class="signature" id="destacados" aria-labelledby="destacados-heading">
       <div class="container">
-        <div class="section-label reveal-text" data-split="chars">— Signatures</div>
-        <h2 class="section-heading reveal-text" id="signature-heading" data-split="lines">
-          Dishes that<br/><em>define us.</em>
+        <div class="section-label reveal-text" data-split="chars">— Editorial de Moda</div>
+        <h2 class="section-heading reveal-text" id="destacados-heading" data-split="lines">
+          Prendas icónicas que<br/><em>definen nuestro sello.</em>
         </h2>
       </div>
 
-      <!-- Signature 1: Image left, text right -->
+      <!-- Item 1 -->
       <div class="signature-item signature-item--normal">
         <div class="signature-image-wrap clip-reveal">
-          <!-- IMAGE: asstes/bbom100892-cafe-7454951.jpg (espresso machine) -->
-          <img src="asstes/bbom100892-cafe-7454951.jpg" alt="Our vintage espresso bar — the heart of Mocha & Miso" class="signature-img" loading="lazy" decoding="async" />
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop" alt="El Blazer Sastrero Oversized — Stefyy Store" class="signature-img" loading="lazy" decoding="async" />
         </div>
         <div class="signature-content reveal-up">
           <span class="signature-number" aria-hidden="true">01</span>
-          <h3 class="signature-title">The Perfect Espresso</h3>
+          <h3 class="signature-title">El Blazer Sastrero Oversized</h3>
           <p class="signature-desc">
-            We've spent six years perfecting a single shot. Our house espresso blend — a 70/30 split of Arabica and Robusta from Coorg and Chikmagalur — is pulled at 9 bars of pressure, 93°C, for exactly 28 seconds. The result is a shot with a thick, tiger-striped crema, notes of dark cherry, and a finish that lingers.
+            Diseñado para transformar cualquier look en segundos. Su caída masculina adaptada a la silueta femenina aporta ese aire effortless chic que amamos. Combinalo con bikers y zapatillas de día, o con pantalón sastrero y tacos para un evento de noche.
           </p>
-          <a href="#menu" class="btn btn-outline magnetic" id="sig1-cta">See Coffee Menu →</a>
+          <a href="#catalogo" class="btn btn-outline magnetic">Ver en Catálogo →</a>
         </div>
       </div>
 
-      <!-- Signature 2: Image right, text left (reversed) -->
+      <!-- Item 2 -->
       <div class="signature-item signature-item--reversed">
         <div class="signature-image-wrap clip-reveal">
-          <!-- IMAGE: asstes/shixugang-coffee-563800.jpg (milk pour into coffee) -->
-          <img src="asstes/shixugang-coffee-563800.jpg" alt="Ceremonial milk pour — our latte art craft" class="signature-img" loading="lazy" decoding="async" />
+          <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=1200&auto=format&fit=crop" alt="Wide Leg Denim y Silueta Perfecta — Stefyy Store" class="signature-img" loading="lazy" decoding="async" />
         </div>
         <div class="signature-content reveal-up">
           <span class="signature-number" aria-hidden="true">02</span>
-          <h3 class="signature-title">The Milk Pour Ritual</h3>
+          <h3 class="signature-title">Wide Leg: El Calce Perfecto</h3>
           <p class="signature-desc">
-            Our baristas train for six months before pouring a cup. Every cappuccino and flat white is finished with freehand latte art — not for decoration, but as a signal of care. When you receive a beautifully poured cup, you know that every detail of your coffee has been attended to.
+            Probamos decenas de moldes hasta lograr el tiro alto exacto que estiliza las piernas y no aprieta la cintura. Confeccionado en puro algodón sin spandex para conservar su estructura intacta lavado tras lavado.
           </p>
-          <a href="#reservation" class="btn btn-outline magnetic" id="sig2-cta">Reserve Your Morning →</a>
+          <a href="#checkout" class="btn btn-outline magnetic">Consultar Talles en WhatsApp →</a>
         </div>
       </div>
 
-      <!-- Signature 3: Image left, text right -->
+      <!-- Item 3 -->
       <div class="signature-item signature-item--normal">
         <div class="signature-image-wrap clip-reveal">
-          <!-- IMAGE: asstes/matteophotopro2020-mussels-5342679_1920.jpg (seafood pasta) -->
-          <img src="asstes/matteophotopro2020-mussels-5342679_1920.jpg" alt="Our signature coastal seafood linguine" class="signature-img" loading="lazy" decoding="async" />
+          <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=1200&auto=format&fit=crop" alt="Conjuntos Monocromáticos de Satén y Lino" class="signature-img" loading="lazy" decoding="async" />
         </div>
         <div class="signature-content reveal-up">
           <span class="signature-number" aria-hidden="true">03</span>
-          <h3 class="signature-title">The Weekend Kitchen</h3>
+          <h3 class="signature-title">Monocromía &amp; Satén</h3>
           <p class="signature-desc">
-            Our weekend kitchen is a different affair. Our chef, Priya, trained at culinary schools in Tokyo and Paris before coming home to build something local. Her seasonal menus — from stone-fired sourdoughs to coastal seafood linguine — change every week based on what's freshest at the market.
+            El brillo sutil del satén y la nobleza del lino en tonos arena, negro profundo y champagne. Piezas fluidas que acompañan tu movimiento con una sensualidad refinada y atemporal.
           </p>
-          <a href="#menu" class="btn btn-outline magnetic" id="sig3-cta">View Full Menu →</a>
+          <a href="#catalogo" class="btn btn-outline magnetic">Explorar Colección →</a>
         </div>
       </div>
 
     </section>
 
     <!-- ============================================================ -->
-    <!-- 5. GALLERY — Pinterest-style masonry -->
+    <!-- 5. GALLERY / LOOKBOOK (#gallery -> #galeria) -->
     <!-- ============================================================ -->
-    <section class="gallery" id="gallery" aria-labelledby="gallery-heading">
+    <section class="gallery" id="galeria" aria-labelledby="galeria-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-label reveal-text" data-split="chars">— Moments</div>
-          <h2 class="section-heading reveal-text" id="gallery-heading" data-split="lines">
-            Life at<br/><em>Mocha &amp; Miso.</em>
+          <div class="section-label reveal-text" data-split="chars">— Street Style &amp; Comunidad</div>
+          <h2 class="section-heading reveal-text" id="galeria-heading" data-split="lines">
+            Cómo visten<br/><em>Stefyy Store.</em>
           </h2>
         </div>
       </div>
@@ -601,81 +992,55 @@
       <div class="gallery-masonry" id="gallery-masonry" role="list">
 
         <div class="gallery-item gallery-item--tall" role="listitem">
-          <!-- IMAGE: asstes/8088465-garden-7111101.jpg -->
           <div class="gallery-item-inner">
-            <img src="asstes/8088465-garden-7111101.jpg" alt="Sunlit garden terrace at Mocha & Miso" class="gallery-img" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" alt="Look Stefyy Store con blazer y jeans" class="gallery-img" loading="lazy" decoding="async" />
             <div class="gallery-item-overlay" aria-hidden="true">
-              <svg class="gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-tag">@stefyy_store</span>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" role="listitem">
-          <!-- IMAGE: asstes/pc500k-seoul-7106196.jpg -->
           <div class="gallery-item-inner">
-            <img src="asstes/pc500k-seoul-7106196.jpg" alt="Industrial modern interior with communal table" class="gallery-img" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800&auto=format&fit=crop" alt="Vestido de satén en evento nocturno" class="gallery-img" loading="lazy" decoding="async" />
             <div class="gallery-item-overlay" aria-hidden="true">
-              <svg class="gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-tag">Night Out Look</span>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" role="listitem">
-          <!-- IMAGE: asstes/shixugang-coffee-563800.jpg -->
           <div class="gallery-item-inner">
-            <img src="asstes/shixugang-coffee-563800.jpg" alt="Milk being poured into espresso" class="gallery-img" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=800&auto=format&fit=crop" alt="Trench coat camel en las calles de la ciudad" class="gallery-img" loading="lazy" decoding="async" />
             <div class="gallery-item-overlay" aria-hidden="true">
-              <svg class="gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-tag">Street Chic</span>
             </div>
           </div>
         </div>
 
         <div class="gallery-item gallery-item--wide" role="listitem">
-          <!-- IMAGE: asstes/hoahoa111-cafe-5972490.jpg -->
           <div class="gallery-item-inner">
-            <img src="asstes/hoahoa111-cafe-5972490.jpg" alt="Guest reading by afternoon light at Mocha & Miso" class="gallery-img" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop" alt="Pantalón sastrero y top lino en café" class="gallery-img" loading="lazy" decoding="async" />
             <div class="gallery-item-overlay" aria-hidden="true">
-              <svg class="gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-tag">Office &amp; Brunch</span>
             </div>
           </div>
         </div>
 
         <div class="gallery-item gallery-item--tall" role="listitem">
-          <!-- IMAGE: asstes/bbom100892-cafe-7454951.jpg -->
           <div class="gallery-item-inner">
-            <img src="asstes/bbom100892-cafe-7454951.jpg" alt="Our vintage La Marzocco espresso machine" class="gallery-img" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?q=80&w=800&auto=format&fit=crop" alt="Detalle de accesorios dorados y bolso" class="gallery-img" loading="lazy" decoding="async" />
             <div class="gallery-item-overlay" aria-hidden="true">
-              <svg class="gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-tag">Details &amp; Luxury</span>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" role="listitem">
-          <!-- IMAGE: asstes/pexels-brick-wall-1834784.jpg -->
           <div class="gallery-item-inner">
-            <img src="asstes/pexels-brick-wall-1834784.jpg" alt="Warm brick wall seating nook with Edison lights" class="gallery-img" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Conjunto monocromo nude de tendencia" class="gallery-img" loading="lazy" decoding="async" />
             <div class="gallery-item-overlay" aria-hidden="true">
-              <svg class="gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item gallery-item--tall" role="listitem">
-          <!-- IMAGE: asstes/gallery_cozy_corner.png -->
-          <div class="gallery-item-inner">
-            <img src="asstes/gallery_cozy_corner.png" alt="Sunlit cozy seating corner with green plants" class="gallery-img" loading="lazy" decoding="async" />
-            <div class="gallery-item-overlay" aria-hidden="true">
-              <svg class="gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item" role="listitem">
-          <!-- IMAGE: asstes/gallery_barista_pour.png -->
-          <div class="gallery-item-inner">
-            <img src="asstes/gallery_barista_pour.png" alt="Barista pouring precision swan latte art" class="gallery-img" loading="lazy" decoding="async" />
-            <div class="gallery-item-overlay" aria-hidden="true">
-              <svg class="gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span class="gallery-tag">Monochrome Love</span>
             </div>
           </div>
         </div>
@@ -684,74 +1049,74 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- 6. TESTIMONIALS — Minimal auto-sliding -->
+    <!-- 6. TESTIMONIALS SECTION (#testimonials -> #testimonios) -->
     <!-- ============================================================ -->
-    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+    <section class="testimonials" id="testimonios" aria-labelledby="testimonios-heading">
       <div class="container">
-        <div class="section-label reveal-text" data-split="chars">— What Guests Say</div>
-        <h2 class="section-heading reveal-text" id="testimonials-heading" data-split="lines">
-          Words from our<br/><em>community.</em>
+        <div class="section-label reveal-text" data-split="chars">— Clientas Reales</div>
+        <h2 class="section-heading reveal-text" id="testimonios-heading" data-split="lines">
+          Lo que dicen quienes<br/><em>eligen Stefyy Store.</em>
         </h2>
 
-        <div class="testimonials-slider" id="testimonials-slider" aria-roledescription="carousel" aria-label="Customer testimonials">
+        <div class="testimonials-slider" id="testimonials-slider" aria-roledescription="carrusel" aria-label="Testimonios de clientas">
           <div class="testimonials-track" id="testimonials-track">
 
-            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial 1 of 5">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <blockquote class="testimonial-quote">"I've been to coffee shops across three continents and Mocha & Miso is genuinely one of the most special. The espresso is extraordinary, the space is calming, and the team feels like family."</blockquote>
+            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Opinión 1 de 5">
+              <div class="testimonial-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <blockquote class="testimonial-quote">"El blazer oversize es una obra de arte. La forrería y la caída son de boutique de lujo. Stefyy me asesoró con las medidas por WhatsApp y me llegó a Córdoba en menos de 48 horas. ¡Fan total!"</blockquote>
               <div class="testimonial-author">
-                <div class="testimonial-avatar" aria-hidden="true">A</div>
+                <div class="testimonial-avatar" aria-hidden="true">C</div>
                 <div class="testimonial-info">
-                  <strong>Arjun Mehta</strong>
-                  <span>Coffee Enthusiast · Mumbai</span>
+                  <strong>Camila Benítez</strong>
+                  <span>Córdoba Capital · Clienta Verificada</span>
                 </div>
               </div>
             </div>
 
-            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial 2 of 5">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <blockquote class="testimonial-quote">"The soufflé pancakes are worth every minute of the wait. Light, pillowy, and topped with the most beautiful seasonal fruit. This place is my weekend ritual."</blockquote>
+            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Opinión 2 de 5">
+              <div class="testimonial-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <blockquote class="testimonial-quote">"Por fin unos jeans que no se deforman y tienen tiro alto real. El wide leg vintage blue estiliza un montón y el 10% de descuento por transferencia fue un golazo."</blockquote>
               <div class="testimonial-author">
-                <div class="testimonial-avatar" aria-hidden="true">P</div>
+                <div class="testimonial-avatar" aria-hidden="true">V</div>
                 <div class="testimonial-info">
-                  <strong>Priya Krishnamurthy</strong>
-                  <span>Food Writer · Bangalore</span>
+                  <strong>Valentina Rossi</strong>
+                  <span>Palermo, Buenos Aires · Clienta Verificada</span>
                 </div>
               </div>
             </div>
 
-            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial 3 of 5">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <blockquote class="testimonial-quote">"Finally a café that understands what a third place means. Not too loud, not too quiet. You can work, read, or just sit and breathe. The cold brew is perfect every single time."</blockquote>
+            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Opinión 3 de 5">
+              <div class="testimonial-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <blockquote class="testimonial-quote">"Compré el vestido de satén para un casamiento y no pararon de preguntarme de dónde era. La tela tiene un peso divino y no se arruga. La atención por WhatsApp es súper cálida y rápida."</blockquote>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" aria-hidden="true">M</div>
+                <div class="testimonial-info">
+                  <strong>Micaela Fernández</strong>
+                  <span>Rosario, Santa Fe · Clienta Verificada</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Opinión 4 de 5">
+              <div class="testimonial-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <blockquote class="testimonial-quote">"Excelente calidad. Ya es mi tercer pedido y todas las prendas vienen perfumadas y con un packaging hermoso. Los pantalones sastreros son comodísimos para trabajar."</blockquote>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" aria-hidden="true">L</div>
+                <div class="testimonial-info">
+                  <strong>Luciana Morales</strong>
+                  <span>Mendoza · Clienta Verificada</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Opinión 5 de 5">
+              <div class="testimonial-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+              <blockquote class="testimonial-quote">"El top corset de lino queda soñado. Tenía dudas con el talle entre S y M, les mandé mis medidas y me recomendaron perfecto. Súper confiable y transparente todo."</blockquote>
               <div class="testimonial-author">
                 <div class="testimonial-avatar" aria-hidden="true">S</div>
                 <div class="testimonial-info">
-                  <strong>Shivani Nair</strong>
-                  <span>Designer · Pune</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial 4 of 5">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <blockquote class="testimonial-quote">"The atmosphere here is something I haven't felt anywhere else in the city. Warm, intentional, calm. My wife and I come here every anniversary morning for our ritual espresso."</blockquote>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar" aria-hidden="true">R</div>
-                <div class="testimonial-info">
-                  <strong>Rahul & Divya Sharma</strong>
-                  <span>Regulars since 2020 · Delhi</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="Testimonial 5 of 5">
-              <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <blockquote class="testimonial-quote">"I hosted a private dinner here and the team went above and beyond. Chef Priya's seasonal tasting menu was genuinely one of the best meals I've had. This isn't just a café — it's an experience."</blockquote>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar" aria-hidden="true">K</div>
-                <div class="testimonial-info">
-                  <strong>Kavya Iyer</strong>
-                  <span>Events Director · Chennai</span>
+                  <strong>Sofía Giménez</strong>
+                  <span>La Plata · Clienta Verificada</span>
                 </div>
               </div>
             </div>
@@ -759,12 +1124,12 @@
           </div><!-- /track -->
 
           <!-- Controls -->
-          <div class="testimonials-controls" role="group" aria-label="Slider controls">
-            <button class="testimonial-btn" id="testimonial-prev" aria-label="Previous testimonial">
+          <div class="testimonials-controls" role="group" aria-label="Controles del carrusel">
+            <button class="testimonial-btn" id="testimonial-prev" aria-label="Testimonio anterior">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
-            <div class="testimonials-dots" id="testimonials-dots" role="tablist" aria-label="Testimonial navigation"></div>
-            <button class="testimonial-btn" id="testimonial-next" aria-label="Next testimonial">
+            <div class="testimonials-dots" id="testimonials-dots" role="tablist" aria-label="Puntos de navegación"></div>
+            <button class="testimonial-btn" id="testimonial-next" aria-label="Próximo testimonio">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
             </button>
           </div>
@@ -774,130 +1139,216 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- ATMOSPHERE / FULL-WIDTH BREAK SECTION -->
+    <!-- ATMOSPHERE / BRAND BANNER SECTION -->
     <!-- ============================================================ -->
-    <section class="atmosphere" id="atmosphere" aria-label="Café atmosphere">
+    <section class="atmosphere" id="atmosphere" aria-label="Esencia de Stefyy Store">
       <div class="atmosphere-image-wrap parallax-image-wrap">
-        <!-- IMAGE: asstes/sklorg-french-restaurant-2506490.jpg -->
-        <img src="asstes/sklorg-french-restaurant-2506490.jpg" alt="Evening atmosphere — welcoming café exterior with warm light" class="atmosphere-img parallax-img" loading="lazy" decoding="async" />
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1920&auto=format&fit=crop" alt="Lookbook Stefyy Store" class="atmosphere-img parallax-img" loading="lazy" decoding="async" />
         <div class="atmosphere-overlay"></div>
       </div>
       <div class="atmosphere-content container">
-        <p class="atmosphere-label reveal-text" data-split="chars">A place to belong</p>
+        <p class="atmosphere-label reveal-text" data-split="chars">Estilo &amp; Actitud</p>
         <h2 class="atmosphere-heading reveal-text" data-split="words">
-          "Come as you are.<br/>Stay as long as you need."
+          "Vestir bien es el primer paso<br/>para sentirte imparable."
         </h2>
-        <a href="#reservation" class="btn btn-light magnetic" id="atmosphere-cta">Make a Reservation</a>
+        <a href="#catalogo" class="btn btn-light magnetic" id="atmosphere-cta">Explorar la Colección</a>
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- 7. RESERVATION SECTION -->
+    <!-- 7. CHECKOUT SECTION (#reservation -> #checkout) -->
     <!-- ============================================================ -->
-    <section class="reservation" id="reservation" aria-labelledby="reservation-heading">
-      <div class="reservation-inner">
+    <section class="reservation checkout-section" id="checkout" aria-labelledby="checkout-heading">
+      <div class="reservation-inner checkout-inner">
 
-        <div class="reservation-content">
-          <div class="section-label reveal-text" data-split="chars">— Reserve</div>
-          <h2 class="section-heading reveal-text" id="reservation-heading" data-split="lines">
-            Join us for<br/><em>a slow morning.</em>
+        <!-- Left Column: Checkout Summary & Guarantees -->
+        <div class="reservation-content checkout-info-col">
+          <div class="section-label reveal-text" data-split="chars">— Checkout Directo</div>
+          <h2 class="section-heading reveal-text" id="checkout-heading" data-split="lines">
+            Hacé tu pedido directo<br/><em>por WhatsApp.</em>
           </h2>
           <p class="reservation-subtext reveal-up">
-            Walk-ins are always welcome, but reservations ensure we set the perfect table for you. For groups of 6 or more, please call us directly.
+            Completá tus datos para coordinar el envío de inmediato. Te responderemos personalmente con los datos de pago seguro y seguimiento.
           </p>
-          <div class="reservation-info reveal-up">
-            <div class="res-info-item">
-              <span class="res-info-label">Breakfast</span>
-              <span class="res-info-val">Mon–Fri: 7:30am–11:30am</span>
+
+          <!-- Dynamic Order Preview Card -->
+          <div class="checkout-summary-card reveal-up" id="checkout-summary-card">
+            <div class="summary-card-header">
+              <span class="summary-badge">Prenda Seleccionada</span>
+              <span class="summary-live-dot" title="Sincronizado con catálogo"></span>
             </div>
-            <div class="res-info-item">
-              <span class="res-info-label">Lunch</span>
-              <span class="res-info-val">Mon–Sun: 12:00pm–3:30pm</span>
+            <div class="summary-product-row">
+              <div class="summary-product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=400&auto=format&fit=crop" alt="Prenda seleccionada" id="summary-img" class="summary-product-img" />
+              </div>
+              <div class="summary-product-details">
+                <h4 class="summary-product-title" id="summary-title">Blazer Sastrero Milano Oversize</h4>
+                <div class="summary-variants-selected">
+                  <span class="summary-pill">Talle: <strong id="summary-size">M</strong></span>
+                  <span class="summary-pill">Color: <strong id="summary-color">Negro Azabache</strong></span>
+                </div>
+                <div class="summary-pricing">
+                  <span class="summary-original-price" id="summary-original-price">$48.900</span>
+                  <span class="summary-final-price" id="summary-total-price">$44.010</span>
+                </div>
+                <span class="summary-discount-tag" id="summary-discount-tag">✓ 10% OFF aplicado (Transferencia/Efectivo)</span>
+              </div>
             </div>
-            <div class="res-info-item">
-              <span class="res-info-label">Dinner</span>
-              <span class="res-info-val">Thu–Sun: 6:30pm–10:00pm</span>
+          </div>
+
+          <!-- Benefits & Trust -->
+          <div class="reservation-info checkout-perks reveal-up">
+            <div class="res-info-item perk-item">
+              <div class="perk-icon">💬</div>
+              <div class="perk-text">
+                <span class="res-info-label">Atención Humana 1 a 1</span>
+                <span class="res-info-val">Te asesoramos con medidas exactas y dudas antes de abonar.</span>
+              </div>
+            </div>
+            <div class="res-info-item perk-item">
+              <div class="perk-icon">⚡</div>
+              <div class="perk-text">
+                <span class="res-info-label">Despacho en 24/48 hs</span>
+                <span class="res-info-val">Envíos rápidos a todo el país vía Correo Argentino / Andreani / Moto CABA.</span>
+              </div>
+            </div>
+            <div class="res-info-item perk-item">
+              <div class="perk-icon">🔄</div>
+              <div class="perk-text">
+                <span class="res-info-label">Cambios Fáciles</span>
+                <span class="res-info-val">Tenés hasta 15 días corridos para solicitar cambio de talle o modelo.</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="reservation-form-wrap reveal-up">
-          <form class="reservation-form" id="reservation-form" novalidate aria-label="Table reservation form">
+        <!-- Right Column: Interactive Order Form -->
+        <div class="reservation-form-wrap checkout-form-wrap reveal-up">
+          <form class="reservation-form checkout-form" id="checkout-form" novalidate aria-label="Formulario de Pedido Stefyy Store">
+            
+            <div class="form-title-wrap">
+              <h3 class="form-inner-title">Datos para tu Envío</h3>
+              <p class="form-inner-subtitle">Completá los campos y abrí tu chat directo de WhatsApp.</p>
+            </div>
+
+            <!-- Customer Name -->
             <div class="form-group">
-              <input type="text" id="res-name" name="name" class="form-input" placeholder=" " required autocomplete="name" />
-              <label for="res-name" class="form-label">Full Name</label>
+              <input type="text" id="order-name" name="name" class="form-input" placeholder=" " required autocomplete="name" />
+              <label for="order-name" class="form-label">Nombre y Apellido completo *</label>
               <span class="form-line"></span>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <input type="email" id="res-email" name="email" class="form-input" placeholder=" " required autocomplete="email" />
-                <label for="res-email" class="form-label">Email Address</label>
-                <span class="form-line"></span>
-              </div>
-              <div class="form-group">
-                <input type="tel" id="res-phone" name="phone" class="form-input" placeholder=" " autocomplete="tel" />
-                <label for="res-phone" class="form-label">Phone (optional)</label>
-                <span class="form-line"></span>
-              </div>
+
+            <!-- Phone / WhatsApp -->
+            <div class="form-group">
+              <input type="tel" id="order-phone" name="phone" class="form-input" placeholder=" " required autocomplete="tel" />
+              <label for="order-phone" class="form-label">Tu Número de WhatsApp (con código de área) *</label>
+              <span class="form-line"></span>
             </div>
+
+            <!-- Shipping Address & Locality -->
+            <div class="form-group">
+              <input type="text" id="order-address" name="address" class="form-input" placeholder=" " required autocomplete="street-address" />
+              <label for="order-address" class="form-label">Dirección de entrega, Localidad y Código Postal *</label>
+              <span class="form-line"></span>
+            </div>
+
+            <!-- Prenda elegida (Auto-synced with catalog) -->
+            <div class="form-group">
+              <select id="order-product" name="product" class="form-input form-input--select" required>
+                <option value="Blazer Sastrero Milano Oversize" data-price="48900" data-img="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=400&auto=format&fit=crop" selected>Blazer Sastrero Milano Oversize ($48.900)</option>
+                <option value="Jean Wide Leg Vintage Blue" data-price="38000" data-img="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=400&auto=format&fit=crop">Jean Wide Leg Vintage Blue ($38.000)</option>
+                <option value="Top Corset Lino Creta" data-price="22500" data-img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=400&auto=format&fit=crop">Top Corset Lino Creta ($22.500)</option>
+                <option value="Vestido Midi Satén Roma" data-price="42000" data-img="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=400&auto=format&fit=crop">Vestido Midi Satén Roma ($42.000)</option>
+                <option value="Trench Coat London Camel" data-price="58000" data-img="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=400&auto=format&fit=crop">Trench Coat London Camel ($58.000)</option>
+                <option value="Pantalón Sastrero París Pinzado" data-price="36500" data-img="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=400&auto=format&fit=crop">Pantalón Sastrero París Pinzado ($36.500)</option>
+                <option value="Remera Algodón Pima Essential" data-price="18900" data-img="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=400&auto=format&fit=crop">Remera Algodón Pima Essential ($18.900)</option>
+                <option value="Chaleco Sastrero Soho" data-price="28000" data-img="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=400&auto=format&fit=crop">Chaleco Sastrero Soho ($28.000)</option>
+                <option value="Vestido Santorini Lino Puro" data-price="34000" data-img="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=400&auto=format&fit=crop">Vestido Santorini Lino Puro ($34.000)</option>
+                <option value="Campera Biker Ecocuero Noir" data-price="52000" data-img="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=400&auto=format&fit=crop">Campera Biker Ecocuero Noir ($52.000)</option>
+                <option value="Pollera Mini Tablas Denim" data-price="26500" data-img="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?q=80&w=400&auto=format&fit=crop">Pollera Mini Tablas Denim ($26.500)</option>
+                <option value="Hoodie Oversize Plush Velvet" data-price="35000" data-img="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=400&auto=format&fit=crop">Hoodie Oversize Plush Velvet ($35.000)</option>
+                <option value="Bolso Tote Bag Cuero Vegano" data-price="29900" data-img="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=400&auto=format&fit=crop">Bolso Tote Bag Cuero Vegano ($29.900)</option>
+                <option value="Cinturón Cuero Hebilla Luxury" data-price="14500" data-img="https://images.unsplash.com/photo-1624222247344-550fb60583dc?q=80&w=400&auto=format&fit=crop">Cinturón Cuero Hebilla Luxury ($14.500)</option>
+              </select>
+              <label for="order-product" class="form-label form-label--up">Prenda a Comprar</label>
+              <span class="form-line"></span>
+            </div>
+
+            <!-- Talle y Color Selector -->
             <div class="form-row">
               <div class="form-group">
-                <input type="date" id="res-date" name="date" class="form-input form-input--date" required />
-                <label for="res-date" class="form-label form-label--up">Date</label>
-                <span class="form-line"></span>
-              </div>
-              <div class="form-group">
-                <select id="res-time" name="time" class="form-input form-input--select" required>
-                  <option value="" disabled selected></option>
-                  <option value="0730">7:30 AM</option>
-                  <option value="0800">8:00 AM</option>
-                  <option value="0830">8:30 AM</option>
-                  <option value="0900">9:00 AM</option>
-                  <option value="0930">9:30 AM</option>
-                  <option value="1000">10:00 AM</option>
-                  <option value="1030">10:30 AM</option>
-                  <option value="1200">12:00 PM</option>
-                  <option value="1230">12:30 PM</option>
-                  <option value="1300">1:00 PM</option>
-                  <option value="1330">1:30 PM</option>
-                  <option value="1400">2:00 PM</option>
-                  <option value="1830">6:30 PM</option>
-                  <option value="1900">7:00 PM</option>
-                  <option value="1930">7:30 PM</option>
-                  <option value="2000">8:00 PM</option>
+                <select id="order-size" name="size" class="form-input form-input--select" required>
+                  <option value="XS">Talle XS</option>
+                  <option value="S">Talle S</option>
+                  <option value="M" selected>Talle M</option>
+                  <option value="L">Talle L</option>
+                  <option value="XL">Talle XL</option>
+                  <option value="Único">Talle Único</option>
                 </select>
-                <label for="res-time" class="form-label form-label--up">Time</label>
+                <label for="order-size" class="form-label form-label--up">Talle Elegido *</label>
+                <span class="form-line"></span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="order-color" name="color" class="form-input" value="Negro Azabache" required />
+                <label for="order-color" class="form-label form-label--up">Color Preferido *</label>
                 <span class="form-line"></span>
               </div>
             </div>
-            <div class="form-group">
-              <div class="guests-selector" role="group" aria-label="Number of guests">
-                <span class="guests-label">Guests</span>
-                <div class="guests-controls">
-                  <button type="button" class="guests-btn" id="guests-minus" aria-label="Decrease guests">−</button>
-                  <span class="guests-count" id="guests-count" aria-live="polite">2</span>
-                  <button type="button" class="guests-btn" id="guests-plus" aria-label="Increase guests">+</button>
-                </div>
+
+            <!-- Payment Method Radio Cards -->
+            <div class="form-group form-payment-group">
+              <span class="payment-title-label">Método de Pago Preferido:</span>
+              <div class="payment-options-grid">
+                <label class="payment-card active" id="pay-card-transfer">
+                  <input type="radio" name="payment_method" value="Efectivo / Transferencia (10% OFF)" checked />
+                  <div class="payment-card-content">
+                    <span class="payment-icon">🏷️</span>
+                    <div class="payment-card-text">
+                      <strong>Transferencia o Efectivo</strong>
+                      <span class="payment-sub-tag">¡10% de Descuento directo!</span>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="payment-card" id="pay-card-mp">
+                  <input type="radio" name="payment_method" value="Mercado Pago (Tarjetas / Cuotas)" />
+                  <div class="payment-card-content">
+                    <span class="payment-icon">💳</span>
+                    <div class="payment-card-text">
+                      <strong>Mercado Pago</strong>
+                      <span class="payment-sub-tag">Débito, Crédito y 3 cuotas</span>
+                    </div>
+                  </div>
+                </label>
               </div>
-              <input type="hidden" id="res-guests" name="guests" value="2" />
             </div>
+
+            <!-- Special Notes / Requests -->
             <div class="form-group">
-              <textarea id="res-notes" name="notes" class="form-input form-textarea" placeholder=" " rows="3"></textarea>
-              <label for="res-notes" class="form-label">Special requests (optional)</label>
+              <textarea id="order-notes" name="notes" class="form-input form-textarea" placeholder=" " rows="2"></textarea>
+              <label for="order-notes" class="form-label">Aclaraciones sobre talle o entrega (opcional)</label>
               <span class="form-line"></span>
             </div>
-            <button type="submit" class="btn btn-primary btn-full magnetic" id="res-submit">
-              <span class="btn-text">Confirm Reservation</span>
+
+            <!-- Submit Button (WhatsApp) -->
+            <button type="submit" class="btn btn-whatsapp btn-full magnetic" id="checkout-submit">
+              <svg viewBox="0 0 24 24" class="btn-whatsapp-icon" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+              <span class="btn-text">Enviar Pedido por WhatsApp</span>
               <span class="btn-ripple" aria-hidden="true"></span>
             </button>
-            <p class="form-disclaimer">We'll send a confirmation to your email within 30 minutes.</p>
+            
+            <p class="form-disclaimer">Al hacer click se abrirá WhatsApp con el resumen de tu pedido listo para coordinar con Stefyy Store.</p>
           </form>
-          <!-- Success message -->
-          <div class="form-success" id="form-success" hidden aria-live="polite">
+
+          <!-- Success message view -->
+          <div class="form-success" id="form-success" hidden style="display: none;" aria-live="polite">
             <div class="form-success-icon" aria-hidden="true">✓</div>
-            <h3>Reservation Received!</h3>
-            <p>Thank you. We'll confirm your table within 30 minutes. See you soon.</p>
-            <button type="button" class="btn btn-outline" id="res-another-btn" style="margin-top:24px; font-size:13px; padding:10px 22px;">Book Another Table</button>
+            <h3>¡Pedido Preparado con Éxito!</h3>
+            <p>Se ha generado el enlace a WhatsApp con el detalle de tu prenda y datos de envío.</p>
+            <div class="form-success-actions">
+              <a href="#" class="btn btn-whatsapp" id="success-wa-link" target="_blank" rel="noopener noreferrer">Abrir Chat de WhatsApp</a>
+              <button type="button" class="btn btn-outline" id="res-another-btn">Hacer Otro Pedido</button>
+            </div>
           </div>
         </div>
 
@@ -905,61 +1356,64 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- 8. CONTACT SECTION -->
+    <!-- 8. CONTACT & SHOWROOM SECTION (#contact -> #contacto) -->
     <!-- ============================================================ -->
-    <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <section class="contact" id="contacto" aria-labelledby="contacto-heading">
       <div class="container">
 
-        <div class="section-label reveal-text" data-split="chars">— Find Us</div>
-        <h2 class="section-heading reveal-text" id="contact-heading" data-split="lines">
-          Come and say<br/><em>hello.</em>
+        <div class="section-label reveal-text" data-split="chars">— Atención &amp; Envíos</div>
+        <h2 class="section-heading reveal-text" id="contacto-heading" data-split="lines">
+          Estamos para<br/><em>asesorarte siempre.</em>
         </h2>
 
         <div class="contact-grid">
 
-          <!-- Hours -->
+          <!-- Hours & Channels -->
           <div class="contact-block reveal-up">
-            <h3 class="contact-block-title">Opening Hours</h3>
+            <h3 class="contact-block-title">Horarios de Atención</h3>
             <ul class="hours-list" role="list">
-              <li class="hours-item"><span>Monday – Wednesday</span><span>7:30am – 6:00pm</span></li>
-              <li class="hours-item"><span>Thursday – Friday</span><span>7:30am – 10:00pm</span></li>
-              <li class="hours-item"><span>Saturday – Sunday</span><span>8:00am – 10:00pm</span></li>
+              <li class="hours-item"><span>Lunes a Viernes</span><span>9:00 hs – 20:00 hs</span></li>
+              <li class="hours-item"><span>Sábados</span><span>10:00 hs – 19:00 hs</span></li>
+              <li class="hours-item"><span>Domingos &amp; Feriados</span><span>Consultas por WhatsApp</span></li>
             </ul>
+            <div class="shipping-info-badge">
+              <span>📦 Despachamos todos los días hábiles a las 14:00 hs.</span>
+            </div>
           </div>
 
-          <!-- Map placeholder -->
+          <!-- Map placeholder / Showroom & Pickup -->
           <div class="contact-block contact-map-block reveal-up">
-            <div class="contact-map-placeholder" aria-label="Map location of Mocha & Miso Café">
+            <div class="contact-map-placeholder" aria-label="Ubicación y punto de retiro de Stefyy Store">
               <div class="map-inner">
                 <svg class="map-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
                   <circle cx="12" cy="9" r="2.5"/>
                 </svg>
-                <p class="map-address">42, Lavelle Road, Ashok Nagar,<br/>Bangalore — 560001</p>
-                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline magnetic map-btn" id="map-link">Open in Maps</a>
+                <p class="map-address">Palermo Soho, Ciudad Autónoma de Buenos Aires<br/>(Punto de Retiro &amp; Showroom Exclusivo)</p>
+                <a href="https://maps.google.com/?q=Palermo+Soho+Buenos+Aires" target="_blank" rel="noopener noreferrer" class="btn btn-outline magnetic map-btn" id="map-link">Ver en Google Maps</a>
               </div>
             </div>
           </div>
 
           <!-- Contact info -->
           <div class="contact-block reveal-up">
-            <h3 class="contact-block-title">Get in Touch</h3>
+            <h3 class="contact-block-title">Canales Oficiales</h3>
             <ul class="contact-list" role="list">
               <li class="contact-item">
                 <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 10.81a19.79 19.79 0 01-3.07-8.67A2 2 0 011.9 0h3a2 2 0 012 1.72c.12.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L5.91 7.91A16 16 0 0016.09 18.1l1.27-1.27a2 2 0 012.11-.45c.91.32 1.85.56 2.81.68A2 2 0 0122 16.92z"/></svg>
-                <a href="tel:+918012345678" class="contact-link">+91 80 1234 5678</a>
-              </li>
-              <li class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <a href="mailto:hello@mochaandmiso.in" class="contact-link">hello@mochaandmiso.in</a>
+                <a href="https://wa.me/5491123456789" target="_blank" rel="noopener noreferrer" class="contact-link">+54 9 11 2345-6789 (WhatsApp Oficial)</a>
               </li>
               <li class="contact-item">
                 <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-link">@mochaandmiso</a>
+                <a href="https://www.instagram.com/stefyy_store/" target="_blank" rel="noopener noreferrer" class="contact-link">@stefyy_store en Instagram</a>
               </li>
               <li class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="contact-link">Mocha & Miso Café</a>
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:hola@stefyystore.com" class="contact-link">hola@stefyystore.com</a>
+              </li>
+              <li class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <span class="contact-link">Envíos a todo el país vía Correo Argentino</span>
               </li>
             </ul>
           </div>
@@ -977,72 +1431,84 @@
     <div class="footer-inner container">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-logo-img-wrap">
-            <img src="asstes/logo_icon.jpg" alt="Mocha and Miso logo" class="footer-logo-img" />
+          <div class="footer-logo-text">
+            <span class="footer-logo-name">Stefyy Store</span>
+            <span class="footer-logo-tag">Indumentaria &amp; Moda Femenina</span>
           </div>
-          <p class="footer-tagline">A craft café experience.</p>
+          <p class="footer-tagline">Prendas con personalidad, actitud y elegancia para todos los días.</p>
         </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
+        <nav class="footer-nav" aria-label="Navegación del pie de página">
           <ul class="footer-links" role="list">
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#reservation">Reserve</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="admin.html" target="_blank" style="color: rgba(248,245,242,0.4); text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em;">Staff Portal</a></li>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo de Ropa</a></li>
+            <li><a href="#about">Nuestra Esencia</a></li>
+            <li><a href="#destacados">Editorial</a></li>
+            <li><a href="#galeria">Lookbook</a></li>
+            <li><a href="#testimonios">Clientas</a></li>
+            <li><a href="#checkout">Hacer Pedido</a></li>
+            <li><a href="admin.html" target="_blank" style="color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase;">Portal Staff</a></li>
           </ul>
         </nav>
-        <div class="footer-social" aria-label="Social media links">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">IG</a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">FB</a>
+        <div class="footer-social" aria-label="Redes sociales">
+          <a href="https://www.instagram.com/stefyy_store/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram de Stefyy Store">IG</a>
+          <a href="https://wa.me/5491123456789" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp Oficial">WA</a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 Mocha &amp; Miso. All rights reserved.</p>
-        <p class="footer-made">Handcrafted with love &amp; espresso.</p>
+        <p class="footer-copy">&copy; 2026 Stefyy Store. Todos los derechos reservados.</p>
+        <p class="footer-made">Diseñado con amor &amp; pasión por la moda.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Success Confirmation Modal -->
-  <div class="res-modal-overlay" id="reservation-success-modal" hidden aria-hidden="true" role="dialog" aria-labelledby="res-modal-title">
+  <!-- ============================================================ -->
+  <!-- SUCCESS CONFIRMATION MODAL (WhatsApp Order Modal) -->
+  <!-- ============================================================ -->
+  <div class="res-modal-overlay" id="reservation-success-modal" hidden style="display: none;" aria-hidden="true" role="dialog" aria-labelledby="res-modal-title">
     <div class="res-modal-card">
-      <button type="button" class="res-modal-close" id="res-modal-close-icon" aria-label="Close modal">&times;</button>
+      <button type="button" class="res-modal-close" id="res-modal-close-icon" aria-label="Cerrar ventana">&times;</button>
       
       <div class="res-modal-header">
-        <div class="res-modal-badge-icon">✓</div>
-        <h3 class="res-modal-title" id="res-modal-title">Reservation Confirmed</h3>
-        <p class="res-modal-subtitle">Thank you for choosing Mocha &amp; Miso.</p>
-        <p class="res-modal-message">We have received your table request and sent a confirmation to your email address.</p>
+        <div class="res-modal-badge-icon">🛍️</div>
+        <h3 class="res-modal-title" id="res-modal-title">¡Orden Lista para Enviar!</h3>
+        <p class="res-modal-subtitle">Gracias por elegir Stefyy Store.</p>
+        <p class="res-modal-message">Hemos preparado el mensaje con todos los detalles de tu compra para abrir WhatsApp con un solo click.</p>
       </div>
 
       <div class="res-modal-details">
         <div class="res-detail-row">
-          <span class="res-detail-label">Reservation ID</span>
-          <span class="res-detail-value res-detail-code" id="modal-res-id">RES-8829</span>
+          <span class="res-detail-label">N° de Pedido</span>
+          <span class="res-detail-value res-detail-code" id="modal-order-id">STEF-9182</span>
         </div>
         <div class="res-detail-row">
-          <span class="res-detail-label">Customer Name</span>
-          <span class="res-detail-value" id="modal-res-name">-</span>
+          <span class="res-detail-label">Clienta</span>
+          <span class="res-detail-value" id="modal-order-name">-</span>
         </div>
         <div class="res-detail-row">
-          <span class="res-detail-label">Date</span>
-          <span class="res-detail-value" id="modal-res-date">-</span>
+          <span class="res-detail-label">Prenda</span>
+          <span class="res-detail-value" id="modal-order-product">-</span>
         </div>
         <div class="res-detail-row">
-          <span class="res-detail-label">Time</span>
-          <span class="res-detail-value" id="modal-res-time">-</span>
+          <span class="res-detail-label">Talle &amp; Color</span>
+          <span class="res-detail-value" id="modal-order-variant">-</span>
         </div>
         <div class="res-detail-row">
-          <span class="res-detail-label">Number of Guests</span>
-          <span class="res-detail-value" id="modal-res-guests">-</span>
+          <span class="res-detail-label">Medio de Pago</span>
+          <span class="res-detail-value" id="modal-order-payment">-</span>
+        </div>
+        <div class="res-detail-row">
+          <span class="res-detail-label">Total a Abonar</span>
+          <span class="res-detail-value modal-highlight-total" id="modal-order-total">$0</span>
         </div>
       </div>
 
       <div class="res-modal-actions">
-        <button type="button" class="btn btn-outline" id="res-modal-view-btn">View Reservation</button>
-        <button type="button" class="btn btn-primary" id="res-modal-home-btn">Back to Home</button>
+        <a href="#" class="btn btn-whatsapp" id="modal-wa-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right:8px;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+          Abrir en WhatsApp Ahora
+        </a>
+        <button type="button" class="btn btn-outline" id="res-modal-home-btn">Seguir Mirando</button>
       </div>
     </div>
   </div>
@@ -1050,22 +1516,7 @@
   <!-- Toast Container -->
   <div class="toast-container" id="toast-container" aria-live="polite"></div>
 
-  <!-- EmailJS SDK — sends confirmation emails directly from the browser -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    // EmailJS config — replace with your credentials from emailjs.com
-    window.EMAILJS_CONFIG = {
-      publicKey:  'YOUR_PUBLIC_KEY',     // Account → API Keys → Public Key
-      serviceId:  'YOUR_SERVICE_ID',     // Email Services → your service ID
-      templateId: 'YOUR_TEMPLATE_ID'    // Email Templates → your template ID
-    };
-    if (window.EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY') {
-      emailjs.init({ publicKey: window.EMAILJS_CONFIG.publicKey });
-    }
-  </script>
-
-  <!-- Firebase + Main JS -->
-  <script src="firebase.js" defer></script>
+  <!-- Main JavaScript File -->
   <script src="main.js" defer></script>
 
 </body>

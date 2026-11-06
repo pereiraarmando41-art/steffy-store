@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Portal — Mocha & Miso Craft Café</title>
+  <title>Stefyy Store — Panel de Gestión de Pedidos</title>
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="icon" type="image/jpeg" href="asstes/logo_icon.jpg" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='serif'>S</text></svg>" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Cormorant Garamond + DM Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
     rel="stylesheet" />
 
   <!-- Firebase SDKs (Compat) -->
@@ -34,47 +34,58 @@
   <section class="admin-login-screen" id="admin-login-section">
     <div class="admin-login-card">
       <div class="admin-brand-header">
-        <img src="asstes/logo_icon.jpg" alt="Mocha & Miso" class="admin-brand-logo" />
-        <h1 class="admin-brand-title">Admin Portal</h1>
-        <p class="admin-brand-sub">Mocha &amp; Miso Craft Café</p>
+        <div class="admin-brand-mark">S</div>
+        <h1 class="admin-brand-title">Stefyy Store</h1>
+        <p class="admin-brand-sub">Panel de Gestión de Pedidos</p>
       </div>
 
       <form class="reservation-form" id="admin-login-form" novalidate>
         <div class="form-group">
-          <input type="email" id="admin-email" class="form-input" placeholder=" " required autocomplete="username" />
-          <label for="admin-email" class="form-label form-label--up">Admin Email</label>
+          <input type="email" id="admin-email" class="form-input" placeholder=" " required autocomplete="username" value="admin@stefyystore.com" />
+          <label for="admin-email" class="form-label form-label--up">Email de Administradora</label>
           <span class="form-line"></span>
         </div>
 
         <div class="form-group">
-          <input type="password" id="admin-password" class="form-input" placeholder=" " required
-            autocomplete="current-password" />
-          <label for="admin-password" class="form-label form-label--up">Password</label>
+          <input type="password" id="admin-password" class="form-input" placeholder=" " required autocomplete="current-password" value="stefyy2026" />
+          <label for="admin-password" class="form-label form-label--up">Contraseña</label>
           <span class="form-line"></span>
         </div>
 
         <button type="submit" class="btn btn-primary btn-full" id="admin-login-submit">
-          <span class="btn-text">Log In to Portal</span>
+          <span class="btn-text">Ingresar al Panel</span>
         </button>
+
+        <p class="admin-login-hint">
+          Acceso protegido para gestión de catálogo, ventas y despachos.
+        </p>
       </form>
     </div>
   </section>
 
   <!-- ============================================================ -->
-  <!-- 2. DASHBOARD VIEW (Hidden until Auth) -->
+  <!-- 2. DASHBOARD VIEW (Visible tras autenticación) -->
   <!-- ============================================================ -->
-  <div id="admin-dashboard-section" hidden>
+  <div id="admin-dashboard-section" hidden style="display: none;">
 
     <!-- Top Header Navigation -->
     <header class="admin-header">
       <div class="container admin-header-inner">
         <div class="admin-logo-group">
-          <h2 class="admin-header-title">Mocha &amp; Miso</h2>
-          <span class="admin-badge">Admin Dashboard</span>
+          <div class="admin-logo-mark-sm">S</div>
+          <div>
+            <h2 class="admin-header-title">Stefyy Store</h2>
+          </div>
+          <span class="admin-badge">Gestión de Pedidos</span>
         </div>
+
         <div class="admin-user-info">
-          <span class="admin-email-text" id="logged-admin-email">rickmondal598@gmail.com</span>
-          <button type="button" class="btn-logout" id="admin-logout-btn">Log Out</button>
+          <a href="index.html" target="_blank" class="admin-view-store">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            <span>Ver Tienda Online</span>
+          </a>
+          <span class="admin-email-text" id="logged-admin-email">admin@stefyystore.com</span>
+          <button type="button" class="btn-logout" id="admin-logout-btn">Cerrar Sesión</button>
         </div>
       </div>
     </header>
@@ -84,84 +95,107 @@
 
       <!-- KPI Stats Grid -->
       <div class="admin-stats-grid">
+        
+        <!-- KPI 1: Total Pedidos -->
         <div class="stat-card">
           <div class="stat-header">
-            <span class="stat-label">Total Reservations</span>
+            <span class="stat-label">Total de Pedidos</span>
             <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M19 4H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zM16 2v4M8 2v4M3 10h18" />
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
             </svg>
           </div>
           <div class="stat-num" id="stat-total">0</div>
+          <span class="stat-sub">Órdenes recibidas</span>
         </div>
 
+        <!-- KPI 2: Pendientes -->
         <div class="stat-card">
           <div class="stat-header">
-            <span class="stat-label">Pending Approval</span>
+            <span class="stat-label">Pendientes de Pago / Despacho</span>
             <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
           </div>
-          <div class="stat-num" id="stat-pending">0</div>
+          <div class="stat-num" id="stat-pending" style="color: #B45309;">0</div>
+          <span class="stat-sub">Requieren atención o cobro</span>
         </div>
 
+        <!-- KPI 3: Enviados / Entregados -->
         <div class="stat-card">
           <div class="stat-header">
-            <span class="stat-label">Confirmed Bookings</span>
+            <span class="stat-label">Pedidos Enviados / Entregados</span>
             <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
             </svg>
           </div>
-          <div class="stat-num" id="stat-confirmed">0</div>
+          <div class="stat-num" id="stat-confirmed" style="color: #047857;">0</div>
+          <span class="stat-sub">Despachados con seguimiento</span>
         </div>
 
+        <!-- KPI 4: Total Facturado / Prendas Vendidas -->
         <div class="stat-card">
           <div class="stat-header">
-            <span class="stat-label">Total Guests Count</span>
+            <span class="stat-label">Total Facturado &bull; Prendas</span>
             <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 00-3-3.87" />
-              <path d="M16 3.13a4 4 0 010 7.75" />
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
             </svg>
           </div>
-          <div class="stat-num" id="stat-guests">0</div>
+          <div class="stat-num" id="stat-revenue">$0</div>
+          <span class="stat-sub" id="stat-items">0 prendas vendidas en total</span>
         </div>
+
       </div>
 
       <!-- Controls: Filter Tabs & Search -->
       <div class="admin-controls-bar">
-        <div class="admin-filter-group" role="tablist">
-          <button type="button" class="admin-filter-tab active" data-filter="all">All Bookings</button>
-          <button type="button" class="admin-filter-tab" data-filter="pending">Pending</button>
-          <button type="button" class="admin-filter-tab" data-filter="confirmed">Confirmed</button>
-          <button type="button" class="admin-filter-tab" data-filter="cancelled">Cancelled</button>
+        <div class="admin-filter-group" role="tablist" aria-label="Filtro por estado de pedido">
+          <button type="button" class="admin-filter-tab active" data-filter="all">
+            Todos <span class="admin-tab-count" id="count-all">0</span>
+          </button>
+          <button type="button" class="admin-filter-tab" data-filter="pendiente">
+            Pendiente <span class="admin-tab-count" id="count-pendiente">0</span>
+          </button>
+          <button type="button" class="admin-filter-tab" data-filter="pagado">
+            Pagado <span class="admin-tab-count" id="count-pagado">0</span>
+          </button>
+          <button type="button" class="admin-filter-tab" data-filter="enviado">
+            Enviado <span class="admin-tab-count" id="count-enviado">0</span>
+          </button>
+          <button type="button" class="admin-filter-tab" data-filter="cancelado">
+            Cancelado <span class="admin-tab-count" id="count-cancelado">0</span>
+          </button>
         </div>
 
-        <input type="text" id="admin-search" class="admin-search-input"
-          placeholder="Search by guest name, email or phone..." />
+        <div class="admin-search-wrap">
+          <svg class="admin-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="admin-search" class="admin-search-input"
+            placeholder="Buscar clienta, prenda, talle, WhatsApp..." />
+        </div>
       </div>
 
-      <!-- Table Container -->
+      <!-- Orders Table Container -->
       <div class="admin-table-card">
         <div class="admin-table-wrap">
           <table class="admin-table">
             <thead>
               <tr>
-                <th>Guest Details</th>
-                <th>Date &amp; Time</th>
-                <th>Guests</th>
-                <th>Special Notes</th>
-                <th>Status</th>
-                <th>Email Status</th>
-                <th>Actions</th>
+                <th>Cliente &amp; Envío</th>
+                <th>Detalle de Prenda</th>
+                <th>Total &amp; Pago</th>
+                <th>Estado del Pedido</th>
+                <th>WhatsApp / Estado</th>
+                <th style="text-align: right;">Acciones</th>
               </tr>
             </thead>
             <tbody id="bookings-tbody">
               <tr>
-                <td colspan="7" style="text-align:center; padding: 40px; color: var(--warm-gray);">
-                  Loading reservations...
+                <td colspan="6" style="text-align:center; padding: 48px; color: var(--warm-gray);">
+                  Cargando pedidos de Stefyy Store...
                 </td>
               </tr>
             </tbody>
@@ -173,33 +207,41 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- 3. EMAIL REPLY MODAL -->
+  <!-- 3. WHATSAPP NOTIFICATION & CHAT MODAL -->
   <!-- ============================================================ -->
-  <div class="admin-modal-overlay" id="reply-modal" hidden>
+  <div class="admin-modal-overlay" id="reply-modal" hidden style="display: none;">
     <div class="admin-modal-card">
-      <h3 class="admin-modal-title">Reply to Guest</h3>
+      <h3 class="admin-modal-title" id="wa-modal-title">Mensaje de WhatsApp a la Clienta</h3>
+      <p class="admin-modal-sub" id="wa-modal-sub">Elegí una plantilla predefinida o editá el mensaje antes de enviarlo.</p>
 
-      <div class="form-group" style="margin-bottom: 20px;">
-        <input type="email" id="modal-guest-email" class="form-input" readonly />
-        <label for="modal-guest-email" class="form-label form-label--up">To (Guest Email)</label>
+      <!-- Template Quick Selector -->
+      <div class="template-selector-wrap">
+        <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--warm-gray); letter-spacing: 0.05em;">Plantillas Rápidas:</span>
+        <div class="template-btn-group">
+          <button type="button" class="template-pill active" data-tpl="despacho">📦 Pedido Despachado</button>
+          <button type="button" class="template-pill" data-tpl="pago">💳 Pago Confirmado</button>
+          <button type="button" class="template-pill" data-tpl="talle">📏 Consulta de Talle</button>
+          <button type="button" class="template-pill" data-tpl="personalizado">✍️ Personalizado</button>
+        </div>
       </div>
 
-      <div class="form-group" style="margin-bottom: 20px;">
-        <input type="text" id="modal-subject" class="form-input" value="Your Reservation at Mocha & Miso Café" />
-        <label for="modal-subject" class="form-label form-label--up">Subject</label>
+      <div class="form-group" style="margin-bottom: 18px;">
+        <input type="tel" id="modal-guest-phone" class="form-input" readonly />
+        <label for="modal-guest-phone" class="form-label form-label--up">Número de WhatsApp</label>
       </div>
 
-      <div class="form-group" style="margin-bottom: 20px;">
-        <textarea id="modal-message" class="form-input form-textarea" rows="5"
-          placeholder="Write your message to the guest..."></textarea>
-        <label for="modal-message" class="form-label form-label--up">Message</label>
+      <div class="form-group" style="margin-bottom: 22px;">
+        <textarea id="modal-message" class="form-input form-textarea" rows="6"
+          placeholder="Escribí el mensaje para la clienta..."></textarea>
+        <label for="modal-message" class="form-label form-label--up">Mensaje a Enviar por WhatsApp</label>
       </div>
 
       <div class="admin-modal-actions">
-        <button type="button" class="btn btn-outline" id="modal-cancel-btn"
-          style="font-size: 13px; padding: 8px 18px;">Close</button>
-        <button type="button" class="btn btn-primary" id="modal-send-btn"
-          style="font-size: 13px; padding: 8px 18px;">Send Email</button>
+        <button type="button" class="btn btn-outline" id="modal-cancel-btn">Cerrar</button>
+        <button type="button" class="btn btn-whatsapp" id="modal-send-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-right: 6px;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.087.086-.178.18-.076.355.101.174.45 1.743 1.967 2.09.198.045.366.027.502-.058.174-.108.766-.893.97-1.198.204-.305.405-.255.679-.153.275.102 1.739.82 2.043.971.304.151.506.225.579.351.073.125.073.725-.071 1.13z"/></svg>
+          Abrir Chat en WhatsApp
+        </button>
       </div>
     </div>
   </div>
@@ -207,23 +249,8 @@
   <!-- Toast Container -->
   <div class="toast-container" id="toast-container" aria-live="polite"></div>
 
-  <!-- EmailJS SDK — sends status update emails (Confirmed / Cancelled) from Admin Portal -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    // EmailJS config — must match the credentials set in index.html
-    window.EMAILJS_CONFIG = {
-      publicKey: '7jzJ419nvCmAxeJLX',
-      serviceId: 'service_x65ekfh',
-      templateId: 'template_6uavdg3'
-    };
-    if (window.EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY') {
-      emailjs.init({ publicKey: window.EMAILJS_CONFIG.publicKey });
-    }
-  </script>
-
   <!-- Scripts -->
   <script src="firebase.js" defer></script>
-  <script src="main.js" defer></script>
   <script src="admin.js" defer></script>
 </body>
 
